@@ -15,16 +15,23 @@ export const logoutCurrentUser = () => ({
 
 export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
-  errors
+  errors: errors.responseJSON
 })
 
 export const login = (user) => dispatch => (
-  SessionApiUtil.login(user).then(user => dispatch(receiveCurrentUser(user)))
+  SessionApiUtil.login(user)
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(err => dispatch(receiveErrors(err)))
 )
 export const logout = () => dispatch => (
   SessionApiUtil.logout().then(user => dispatch(logoutCurrentUser()))
 )
 
-export const signUp = (user) => dispatch => (
-  SessionApiUtil.signUp(user).then(user=> dispatch(receiveCurrentUser(user)))
-)
+export const signUp = (user) => dispatch => {
+  debugger
+  return (
+    SessionApiUtil.signUp(user)
+      .then(user=> dispatch(receiveCurrentUser(user)))
+      .fail(err => dispatch(receiveErrors(err)))
+  )
+}

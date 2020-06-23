@@ -29,12 +29,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
     this.props.processForm(this.state);
-    // this.setState({
-    //   username: '',
-    //   password: ''
-    // })
   }
 
   signUp() {
@@ -56,12 +51,20 @@ class SessionForm extends React.Component {
   render() {
     const { formType, errors } = this.props
     const LoginLink = (formType === 'signup') ? this.login() : this.signUp()
+    
+    const err = errors.map(error => {
+      return <label>{error}</label>
+    })
+    
+
     return (
       <div className="login_form_div">
         <form onSubmit={this.handleSubmit} className="login_form">
           <h3>
             {formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}
           </h3>
+          <br/>
+            {err ? err : ''}
           <br/>
           <label>Email or Username*
             <br/>
@@ -89,7 +92,7 @@ class SessionForm extends React.Component {
           <br/>
           <div className='form_question'>
             {LoginLink}
-            {errors ? errors : ''}
+            {/* {err ? err : ''} */}
           </div>
         </form>
       </div>
