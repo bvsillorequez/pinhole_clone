@@ -7,10 +7,11 @@ import { AuthRoute } from '../util/route_util'
 
 const App = () => (
   <div>
-    <header>
-      <h1 className="pinhole_header">Pinhole</h1>
-      <HeaderContainer className="header_comps"/>
+    <header className="inner_header">
+      <li><h1 className="pinhole_header">Pinhole</h1></li>
+      <li><HeaderContainer /></li>
     </header>
+  
 
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
