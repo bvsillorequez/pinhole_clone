@@ -40,18 +40,35 @@ header {
 header li {
   display: inline-block;
   float: left;
-  margin: 15px 30px 15px 30px;
+  margin: 15px 30px 15px 60px;
 }
 
 header li:last-child {
   float: right;
-  margin: 25px 30px 25px 30px;
+  margin: 25px 60px 25px 30px;
 }
 
 .pinhole_header{
   font-family: Oswald;
   font-size: 28px;
   text-transform: uppercase;
+}
+
+.active {
+  display: inline-flex;
+  float: left;
+  text-decoration: none;
+  align-items: center;
+  align-content: center;
+  color: black;
+  padding: 0px 60px 0px 0px; 
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
 }
 
 .header_comps {

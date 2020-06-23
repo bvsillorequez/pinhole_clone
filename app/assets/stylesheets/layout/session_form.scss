@@ -68,6 +68,12 @@
   padding: 10px 0px 10px 0px;
   font-weight: bold;
 }
+
+.fb_button:hover{
+  background-color: #2d4475;
+  border: 1px solid #2d4475;
+}
+
  .google_button {
    display: flex;
   justify-content: center;
@@ -80,6 +86,11 @@
   font-weight: bold;
 }
 
+.google_button:hover {
+  background-color: #e3e3e3;
+  border: 1px solid #e3e3e3;
+}
+
 .form_question {
   display: flex;
   justify-content: center;
@@ -87,4 +98,8 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+}
+
+input[type=submit] {
+  cursor: pointer;
 }
