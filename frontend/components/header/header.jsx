@@ -14,8 +14,8 @@ class Header extends React.Component {
   isLoggedOut() {
     return (
       <div>
-        <Link to='/login'>Log in</Link>
-        <Link to='/signup'>Sign up</Link>
+        <Link to='/login' className='header_comps'>Log in</Link>
+        <Link to='/signup' className='header_comps sign_up'>Sign up</Link>
       </div>
     )
   }

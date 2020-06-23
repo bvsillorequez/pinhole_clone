@@ -1,0 +1,90 @@
+.login_form_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(247, 248, 250);
+  min-height: 600px;
+  height: 100vh;
+}
+
+.login_form {
+  padding: 25px;
+  background-color: white;
+  width: 340px;
+  height: 450px;
+}
+
+.login_form > h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_form > label {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+
+.login_form  input[type=text],input[type=password]{
+  display: flex;
+  justify-content: center;
+  width: 325px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px auto;
+}
+
+.login_button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  background-color:  #1890ff;
+  border-radius: 25px;
+  border: 1px solid #1890ff;
+  padding: 10px 0px 10px 0px;
+  /* width: 90px; */
+  /* height: 15px; */
+}
+
+.login_button:hover {
+  background-color: #3c94cf;
+  border: 1px solid #3c94cf;
+}
+
+/* .login_form input[type=submit] */
+
+ .fb_button {
+   display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  background-color:  #3b5998;
+  border-radius: 25px;
+  border: 1px solid #3b5998;
+  padding: 10px 0px 10px 0px;
+  font-weight: bold;
+}
+ .google_button {
+   display: flex;
+  justify-content: center;
+  width: 100%;
+  color: darkgray;
+  background-color:  white;
+  border-radius: 25px;
+  border: 1px solid darkgray;
+  padding: 10px 0px 10px 0px;
+  font-weight: bold;
+}
+
+.form_question {
+  display: flex;
+  justify-content: center;
+  color: darkgray;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}

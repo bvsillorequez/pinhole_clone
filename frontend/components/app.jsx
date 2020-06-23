@@ -8,8 +8,8 @@ import { AuthRoute } from '../util/route_util'
 const App = () => (
   <div>
     <header>
-      <h1>Pinhole</h1>
-      <HeaderContainer/>
+      <h1 className="pinhole_header">Pinhole</h1>
+      <HeaderContainer className="header_comps"/>
     </header>
 
     <AuthRoute path="/login" component={LoginFormContainer} />

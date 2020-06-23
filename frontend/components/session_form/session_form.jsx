@@ -47,26 +47,39 @@ class SessionForm extends React.Component {
     const { formType, errors } = this.props
     const LoginLink = (formType === 'signup') ? this.login() : this.signUp()
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>{formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}</h3>
-          <label>Username:
+      <div className="login_form_div">
+        <form onSubmit={this.handleSubmit} className="login_form">
+          <h3>
+            {formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}
+          </h3>
+          <br/>
+          <label>Email or Username*
+            <br/>
             <input
               type="text"
               onChange={this.update('username')}
               value={this.state.username} />
           </label>
-          <label>Password:
+          <br/><br/>
+          <label>Password*
+            <br/>
             <input
               type="password"
               onChange={this.update('password')}
               value={this.state.password} />
           </label>
-          <input type="submit" value={formType} />
+          <br/><br/>
+          <input type="submit" className="login_button" value={formType} />
+          <br/><br/>
+          <input type="submit" className="fb_button" value='Log in with Facebook' />
+          <br/>
+          <input type="submit" className="google_button "value='Log in with Google' />
+          <br/><br/><br/>
+          <div className='form_question'>
+            {LoginLink}
+            {errors ? errors : ''}
+          </div>
         </form>
-        <br />
-        {LoginLink}
-        {errors ? errors : ''}
       </div>
     )
   }
