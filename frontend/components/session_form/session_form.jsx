@@ -30,6 +30,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
+    //clear errors
+  }
+
+  componentDidMount() {
+    this.props.clearErrors()
   }
 
   signUp() {
@@ -82,17 +87,29 @@ class SessionForm extends React.Component {
               value={this.state.password} />
           </label>
           <br/><br/>
-          <input type="submit" className="login_button" value={formType} />
+          <input 
+            type="submit" 
+            className="login_button" 
+            value={formType} />
           <br/>
-          <input type="submit" onClick={this.demoUserSubmit} className="login_button" value='Demo User Login' />
+          <input 
+            type="submit" 
+            onClick={this.demoUserSubmit} 
+            className="login_button" 
+            value='Demo User Login' />
           <br/>
-          <input type="submit" className="fb_button" value='Log in with Facebook' />
+          <input 
+            type="submit" 
+            className="fb_button" 
+            value='Log in with Facebook' />
           <br/>
-          <input type="submit" className="google_button "value='Log in with Google' />
+          <input 
+            type="submit" 
+            className="google_button"
+            value='Log in with Google' />
           <br/>
           <div className='form_question'>
             {LoginLink}
-            {/* {err ? err : ''} */}
           </div>
         </form>
       </div>

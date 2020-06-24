@@ -7,6 +7,8 @@ class Header extends React.Component {
       <div>
         <h3>Hello, This Part Won't be here later{this.props.currentUser.username}</h3>
         <button onClick={this.props.logout}>Logout</button>
+        Profile
+        Logout
       </div>
     )
   }

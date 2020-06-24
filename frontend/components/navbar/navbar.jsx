@@ -10,11 +10,9 @@ export default class Navbar extends React.Component{
         </h1>
         <div className="navbar">
           <NavLink to='/' >Discover</NavLink>
-          <NavLink to='/' >Licensing</NavLink>
-          <NavLink to='/' >Memberships</NavLink>
-          <NavLink to='/' >Quests</NavLink>
-          <NavLink to='/' >Create Stories</NavLink>
-          <NavLink to='/' >Blog</NavLink>
+          <NavLink to='/' >GitHub</NavLink>
+          <NavLink to='/' >Link</NavLink>
+          <NavLink to='/' >Link</NavLink>
         </div>
       </div>
     )
