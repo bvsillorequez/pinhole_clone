@@ -10,8 +10,7 @@ const ProfileDropdown = ({logout}) => {
   return (
     <div id="profilepointer" onClick={triggerDropdown}>
       <div >
-        ProfileImage
-
+        <i className="fas fa-user-alt fa-lg"></i>
       </div>
       <ul id="profiledropdown">
         <li><Link to={`/api/users/user.id`} className="profileLink">Profile</Link></li>

@@ -7,6 +7,8 @@ class Header extends React.Component {
     return (
       <div>
         <ProfileDropdown logout={this.props.logout}/>
+        <i className="far fa-paper-plane fa-lg"></i>
+        <i className="far fa-bell fa-lg"></i>
         <Link to='/upload' className='header_comps sign_up'>Upload</Link>
       </div>
     )

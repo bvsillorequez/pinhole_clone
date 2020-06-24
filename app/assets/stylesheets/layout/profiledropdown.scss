@@ -16,7 +16,8 @@
     width: 180px;
     z-index: 3;
     background-color: white;
-    margin-top: 12px;
+    margin-top: 2px;
+    margin-left: -20px;
     padding-top: 7px;
     padding-bottom: 7px;
 
@@ -36,4 +37,11 @@
 }
 #profiledropdown li:hover {
   background: #216feb;
+}
+
+.fas, .far {
+  color: gray;
+  width: 30px;
+  height: 30px;
+  padding-right: 25px;
 }
