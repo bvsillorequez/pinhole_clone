@@ -57,62 +57,72 @@ class SessionForm extends React.Component {
     const { formType, errors } = this.props
     const LoginLink = (formType === 'signup') ? this.login() : this.signUp()
     
-    const err = errors.map(error => {
-      return <label>{error}</label>
+    const err = errors.map((error, i) => {
+      return <label key={i}>{error}</label>
     })
     
 
     return (
-      <div className="login_form_div">
-        <form onSubmit={this.handleSubmit} className="login_form">
-          <h3>
-            {formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}
-          </h3>
-          <br/>
-            {err ? err : ''}
-          <br/>
-          <label>Email or Username*
-            <br/>
-            <input
-              type="text"
-              onChange={this.update('username')}
-              value={this.state.username} />
-          </label>
-          <br/><br/>
-          <label>Password*
-            <br/>
-            <input
-              type="password"
-              onChange={this.update('password')}
-              value={this.state.password} />
-          </label>
-          <br/><br/>
-          <input 
-            type="submit" 
-            className="login_button" 
-            value={formType} />
-          <br/>
-          <input 
-            type="submit" 
-            onClick={this.demoUserSubmit} 
-            className="login_button" 
-            value='Demo User Login' />
-          <br/>
-          <input 
-            type="submit" 
-            className="fb_button" 
-            value='Log in with Facebook' />
-          <br/>
-          <input 
-            type="submit" 
-            className="google_button"
-            value='Log in with Google' />
-          <br/>
-          <div className='form_question'>
-            {LoginLink}
+      <>
+        
+        
+        <div className="login_form_div">
+          { err.length > 0 && <div onClick={this.props.closeModal} className="modal-errors">
+            {err}
           </div>
-        </form>
-      </div>
+          }
+
+          <form onSubmit={this.handleSubmit} className="login_form">
+            <h3>
+              {formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}
+            </h3>
+            <br/>
+          
+    
+            <br/>
+            <label>Email or Username*
+              <br/>
+              <input
+                type="text"
+                onChange={this.update('username')}
+                value={this.state.username} />
+            </label>
+            <br/><br/>
+            <label>Password*
+              <br/>
+              <input
+                type="password"
+                onChange={this.update('password')}
+                value={this.state.password} />
+            </label>
+            <br/><br/>
+            <input 
+              type="submit" 
+              className="login_button" 
+              value={formType} />
+            <br/>
+            <input 
+              type="submit" 
+              onClick={this.demoUserSubmit} 
+              className="login_button" 
+              value='Demo User Login' />
+            <br/>
+            <input 
+              type="submit" 
+              className="fb_button" 
+              value='Log in with Facebook' />
+            <br/>
+            <input 
+              type="submit" 
+              className="google_button"
+              value='Log in with Google' />
+            <br/>
+            <div className='form_question'>
+              {LoginLink}
+            </div>
+          </form>
+        </div>
+      </>
     )
   }
 }
