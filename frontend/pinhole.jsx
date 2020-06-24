@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   
+  const closeDropdown = (e) => {
+    // debugger
+    if(e.target.className !== '#profilepointer') {
+      $('#profiledropdown').removeClass('trigger')
+    }
+  } 
+  // $(window).on('click', closeDropdown)
+  document.addEventListener('click', closeDropdown)
+
   ReactDOM.render(<Root store={store}/>, root);
 
 

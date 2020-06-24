@@ -1,0 +1,39 @@
+#profilepointer {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#profiledropdown {
+  position: absolute;
+  display: none;
+  &.trigger {
+    display: block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: content-box;
+    width: 180px;
+    z-index: 3;
+    background-color: white;
+    margin-top: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+  }
+}
+
+.profileLink {
+  text-decoration: none;
+  color:  black;
+}
+
+#profiledropdown > li {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  
+}
+#profiledropdown li:hover {
+  background: #216feb;
+}

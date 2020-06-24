@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ProfileDropdown from '../profile_dropdown/profile_dropdown'
 
 class Header extends React.Component {
   isLoggedIn() {
     return (
       <div>
-        <h3>Hello, This Part Won't be here later{this.props.currentUser.username}</h3>
-        <button onClick={this.props.logout}>Logout</button>
-        Profile
-        Logout
+        <ProfileDropdown logout={this.props.logout}/>
+        <Link to='/upload' className='header_comps sign_up'>Upload</Link>
       </div>
     )
   }

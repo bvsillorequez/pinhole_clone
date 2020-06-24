@@ -1,32 +1,3 @@
-// header {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin: 20px 60px;
-//   z-index: 4;
-// }
-
-// header {
-//   overflow: hidden;
-//   background-color: white;
-//   position: fixed; 
-//   top: 0; 
-//   width: 100%;
-//   background-color: white;
-//   // margin: 20px 60px;
-// }
-
-// .inner_header {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   // margin: ;
-//   padding-left: 30px;
-//   padding-right: 30px;
-//   border-radius: 40px;
-// }
-
 header {
   position: fixed;
   top: 0;
@@ -37,13 +8,13 @@ header {
   background-color: white;
 }
 
-header li {
+header > li {
   display: inline-block;
   float: left;
   margin: 15px 30px 15px 60px;
 }
 
-header li:last-child {
+header > li:last-child {
   float: right;
   margin: 25px 60px 25px 30px;
 }
