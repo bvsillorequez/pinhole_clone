@@ -1,0 +1,99 @@
+.body_box {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.top-image {
+  display: inline-block;
+  position: relative;
+  width: 100vw;
+}
+
+.top-image .top-image-content {
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  max-width: 30%;
+  text-align: left;
+  background-color: gray;
+  opacity: 0.9;
+  padding: 30px 30px;
+  font-size: 1vw;
+  border-radius: 10px;
+}
+
+.top-image-content > h2 {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 110%;
+  font-size: 2vw;
+}
+
+.top-image-content > p {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 120%;
+  font-size: 1vw;
+}
+
+.top-image-content > button {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 40px;
+  padding: 5px 15px 5px 15px;
+  width: 220px;
+  height: 60px;
+
+}
+
+.top-image-content > button:hover {
+  filter: brightness(80%);
+}
+
+.about-pinhole{
+  margin: auto;
+}
+
+
+.about-pinhole > h3 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 200%;
+  margin-bottom: 40px;
+}
+
+.about-pinhole .about-content {
+  display: inline-block;
+  // float: left;
+  width: 28%;
+  font-size: 20px;
+  padding: 10px;
+  vertical-align: top;
+  margin-left: 3%;
+}
+
+.about-content > h4 {
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+.about-content > p {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 120%;
+}
+
+.text-images {
+  width: 15%;
+  height: 15%;
+}
