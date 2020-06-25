@@ -8,7 +8,8 @@ import Navbar from './navbar/navbar'
 import FrontPage from './front_page'
 import HomeFeed from './home_feed'
 
-const App = (props) => {
+const App = () => {
+  debugger
   return (
     <div>
       <header className="inner_header">
@@ -17,9 +18,11 @@ const App = (props) => {
       </header>
       <Switch>
         <ProtectedRoute exact path="/home" component={HomeFeed}/>
-        <AuthRoute exact path="/" component={FrontPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/" component={FrontPage} />
+        <Redirect to='/' />
+        <Route path="/" component={FrontPage} />
       </Switch>
     </div>
   )
