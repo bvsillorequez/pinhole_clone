@@ -9,7 +9,6 @@ import FrontPage from './front_page'
 import HomeFeed from './home_feed'
 
 const App = () => {
-  debugger
   return (
     <div>
       <header className="inner_header">

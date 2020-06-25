@@ -99,8 +99,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')}
                 value={this.state.username} />
             </label>
-            {this.usernameError()}
-            <br/><br/>
+            <div className='errors-box'>{this.usernameError()}</div>
+            <br/><br/><br/>
             <label>Password*
               <br/>
               <input
@@ -108,19 +108,18 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 value={this.state.password} />
             </label>
-            {this.passwordError()}
-            {err.includes('Password') ? err : ''}
-            <br/><br/>
+            <div className='errors-box'>{this.passwordError()}</div>  
+            <br/><br/><br/>
             <input 
               type="submit" 
               className="login_button" 
               value={submitButton} />
             <br/>
-            <input 
+            {formType === 'login' && <input 
               type="submit" 
               onClick={this.demoUserSubmit} 
               className="login_button" 
-              value='Demo User Login' />
+              value='Demo User Login' />}
             <br/>
             <div className='form_question'>
               {LoginLink}
