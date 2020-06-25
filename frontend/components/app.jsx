@@ -10,7 +10,6 @@ import FrontPage from './front_page'
 const App = () => (
   <div>
     <header className="inner_header">
-      {/* <li><h1 className="pinhole_header">Pinhole</h1></li> */}
       <li><Navbar/></li>
       <li><HeaderContainer/></li>
     </header>

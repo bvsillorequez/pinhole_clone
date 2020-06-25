@@ -4,10 +4,12 @@
 }
 
 .top-image {
-  background: url('sky.jpg');
+  background-image: image-url('front_page/sky.jpg');
+  background-size: cover;
   display: inline-block;
-  position: absolute;
+  position: relative;
   width: 100vw;
+  padding-top: calc(0.46 * 100vw);
 }
 
 .top-image .top-image-content {
@@ -94,10 +96,35 @@
   line-height: 120%;
 }
 
-.text-images {
-  width: 15%;
-  height: 15%;
+.plant {
+  display: block;
+  background-image: image-url('front_page/plant.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.10 * 673.67px);
+  height: calc(0.10 * 673.67px);
+  margin-bottom: 10px;
 }
+.ruler {
+  display: block;
+  background-image: image-url('front_page/ruler.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.10 * 673.67px);
+  height: calc(0.10 * 673.67px);
+  margin-bottom: 10px;
+}
+.statistics {
+  display: block;
+  background-image: image-url('front_page/statistics.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: calc(0.10 * 673.67px);
+  height: calc(0.10 * 673.67px);
+  margin-bottom: 10px;
+}
+
+
 
 .bottom-bar {
   background-color: #423078;
