@@ -52,24 +52,38 @@ class SessionForm extends React.Component {
     )
   }
 
+  usernameError () {
+      return (this.props.errors.map((error, i) => (
+        error.includes('Username') ? <ul className ="error" key={i}>{error}</ul>  : ''
+      )))
+  }
+
+  passwordError () {
+      return (this.props.errors.map((error, i) => (
+        error.includes('Password') ? <ul className="error" key={i}>{error}</ul>  : ''
+      )))
+  }
+
   render() {
     const { formType, errors } = this.props
     
     const LoginLink = (formType === 'signup') ? this.login() : this.signUp()
     
     const err = errors.map((error, i) => {
-      return <label key={i}>{error}</label>
+      return <label key={i}> {error}</label>
     })
     
+    const submitButton = (formType === 'signup') ? 'Sign up' : 'Log in'
 
     return (
       <>
         
         
         <div className="login_form_div">
-          { err.length > 0 && <div onClick={this.props.closeModal} className="modal-errors">
-            {err}
-          </div>
+          {formType === 'login' && err.length > 0 && 
+            <div onClick={this.props.closeModal} className="modal-errors">
+              {err}
+            </div>
           }
 
           <form onSubmit={this.handleSubmit} className="login_form">
@@ -85,6 +99,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')}
                 value={this.state.username} />
             </label>
+            {this.usernameError()}
             <br/><br/>
             <label>Password*
               <br/>
@@ -93,27 +108,19 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 value={this.state.password} />
             </label>
+            {this.passwordError()}
+            {err.includes('Password') ? err : ''}
             <br/><br/>
             <input 
               type="submit" 
               className="login_button" 
-              value={formType} />
+              value={submitButton} />
             <br/>
             <input 
               type="submit" 
               onClick={this.demoUserSubmit} 
               className="login_button" 
               value='Demo User Login' />
-            <br/>
-            <input 
-              type="submit" 
-              className="fb_button" 
-              value='Log in with Facebook' />
-            <br/>
-            <input 
-              type="submit" 
-              className="google_button"
-              value='Log in with Google' />
             <br/>
             <div className='form_question'>
               {LoginLink}

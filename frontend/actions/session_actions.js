@@ -31,12 +31,12 @@ export const login = (user) => dispatch => (
     .fail(err => dispatch(receiveErrors(err)))
 )
 export const logout = () => dispatch => (
-  SessionApiUtil.logout().then(user => dispatch(logoutCurrentUser()))
+  SessionApiUtil.logout().then(() => dispatch(logoutCurrentUser()))
 )
 
 export const signUp = (user) => dispatch => {
   return (
-    SessionApiUtil.signUp(user)
+    SessionApiUtil.signUp(user)   
       .then(user=> {
         dispatch(receiveCurrentUser(user)) 
         dispatch(clearErrors())})

@@ -52,10 +52,12 @@
   padding: 5px 15px 5px 15px;
   width: 220px;
   height: 60px;
+  outline: none;
 }
 
 .top-image-content > button:hover {
   filter: brightness(80%);
+  cursor: pointer;
 }
 
 .about-pinhole{
@@ -160,10 +162,12 @@
   margin-left: 43%;
   color: black;
   text-decoration: none;
+  outline: none;
 }
 
 .bottom-bar-content > button:hover {
   color:  #1890ff;
+  cursor: pointer;
 }
 
 div footer {
