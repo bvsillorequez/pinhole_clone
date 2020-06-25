@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
                 value={this.state.username} />
             </label>
             <div className='errors-box'>{this.usernameError()}</div>
-            <br/><br/><br/>
+            <br/><br/>
             <label>Password*
               <br/>
               <input
@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
                 value={this.state.password} />
             </label>
             <div className='errors-box'>{this.passwordError()}</div>  
-            <br/><br/><br/>
+            <br/><br/>
             <input 
               type="submit" 
               className="login_button" 
