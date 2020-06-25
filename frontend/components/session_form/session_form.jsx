@@ -54,6 +54,7 @@ class SessionForm extends React.Component {
 
   render() {
     const { formType, errors } = this.props
+    
     const LoginLink = (formType === 'signup') ? this.login() : this.signUp()
     
     const err = errors.map((error, i) => {
