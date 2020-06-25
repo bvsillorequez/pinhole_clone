@@ -10,7 +10,8 @@ export default class Navbar extends React.Component{
         </h1>
         <div className="navbar">
           <NavLink to='/' >Discover</NavLink>
-          <NavLink to='/' >GitHub</NavLink>
+          <a href="https://github.com/bvsillorequez">GitHub</a>
+          <a href="http://www.linkedin.com/in/bsillo">LinkedIn</a>
         </div>
       </div>
     )
