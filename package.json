@@ -40,5 +40,9 @@
   "bugs": {
     "url": "https://github.com/bvsillorequez/pinhole_clone/issues"
   },
+  "engines": {
+    "node": "14.3.0",
+    "npm": "6.14.4"
+  },
   "homepage": "https://github.com/bvsillorequez/pinhole_clone#readme"
 }
