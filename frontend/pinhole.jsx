@@ -29,12 +29,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener('click', closeDropdown)
 
   ReactDOM.render(<Root store={store}/>, root);
-
-
-  // DELETE LATER ONLY FOR TESTING
-  window.login = login
-  window.logout = logout
-  window.signUp = signUp
-  window.getState = store.getState
-  window.dispatch = store.dispatch
 });

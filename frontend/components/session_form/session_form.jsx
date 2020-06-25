@@ -30,7 +30,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
-    //clear errors
   }
 
   componentDidMount() {
@@ -77,8 +76,6 @@ class SessionForm extends React.Component {
               {formType === 'login' ? 'Log in to Pinhole': 'Join Pinhole'}
             </h3>
             <br/>
-          
-    
             <br/>
             <label>Email or Username*
               <br/>

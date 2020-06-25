@@ -4,14 +4,14 @@ import { login, clearErrors } from '../../actions/session_actions'
 import { openModal, closeModal } from '../../actions/modal_actions';
 import React from 'react';
 
-const mSTP = (state, ownProps) => {
+const mSTP = state => {
   return {
     errors: Object.values(state.errors.session),
     formType: 'login'
   }
 }
 
-const mDTP = (dispatch, ownProps) => ({
+const mDTP = dispatch => ({
   processForm: user => dispatch(login(user)),
   clearErrors: () => dispatch(clearErrors()),
   otherForm: (

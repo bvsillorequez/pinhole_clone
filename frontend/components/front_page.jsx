@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const FrontPage = () => {
   return (
@@ -8,7 +9,13 @@ const FrontPage = () => {
           <h2>Discover and share the world's best photos</h2>
           <p>Get inspired with incredible photos from diverse styles and genres
         around the world.  We're notguided by fads - just great photography.</p>
-          <button href='/signup'>Sign up</button>
+          <button>
+            <Link
+              to='/signup'
+              style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              Sign up
+            </Link>
+          </button>
         </div>
       </div>
 
@@ -44,13 +51,20 @@ const FrontPage = () => {
           <p>We want fresh, creative talent like you. Join our global network of
           like-minded creators to be inspired by incredible photos daily, and get
       rewarded for your talents.</p>
-          <button href='/signup'>Sign up</button>
+          <button>
+            <Link 
+              to='/signup' 
+              style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                  Sign up
+            </Link>
+          </button>
         </div>
       </div>
+
       <div>
         <footer>
           © Pinhole - 2020
-    </footer>
+        </footer>
       </div>
     </div>
   );
