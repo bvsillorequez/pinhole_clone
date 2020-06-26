@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
-  validates :title, :user_id, presence: true
+  validates :title, presence: true
   
-  belongs_to :user_id
+  belongs_to :user
 end
