@@ -1,12 +1,13 @@
 import { connect } from "react-redux"
-import { fetchPost, updatePost } from "../../util/post_api_util"
+import { fetchPost, updatePost, deletePost } from "../../actions/post_actions"
 import EditPostForm from './edit_post_form'
 
 
 const mSTP = (state, ownProps) => {
   return {
-    errors: Object.values(errors.posts),
-    post: state.posts[ownProps.match.params.postId],
+    errors: Object.values(state.errors.posts),
+    post: state.entities.posts[ownProps.match.params.postId],
+    session: state.session.id,
     formType: 'Edit Post'
   }
 }
@@ -14,6 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
   return {
     fetchPost: postId => dispatch(fetchPost(postId)),
+    deletePost: postId => dispatchEvent(deletePost(postId)),
     action: post => dispatch(updatePost(post))
   }
 }

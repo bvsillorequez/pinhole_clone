@@ -7,9 +7,8 @@ export default class EditPostForm extends React.Component {
   }
 
   render() {
-    const { action, formType, post } = this.props;
-
-    if (!post) return null;
+    const { action, formType, post, session } = this.props;
+    if (!post || post.user_id !== session ) return null;
     return (
       <PostForm
         action={action}

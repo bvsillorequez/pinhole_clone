@@ -1,11 +1,11 @@
 import { connect } from "react-redux"
-import { fetchPost, updatePost } from "../../util/post_api_util"
+import { fetchPost } from "../../actions/post_actions"
 import PostShow from './post_show'
 
 
 const mSTP = (state, ownProps) => {
   return {
-    post: state.posts[ownProps.match.params.postId]
+    post: state.entities.posts[ownProps.match.params.postId]
   }
 }
 

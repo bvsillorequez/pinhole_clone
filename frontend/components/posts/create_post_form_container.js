@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 import PostForm from './post_form'
-import React from 'react'
+import {createPost} from '../../actions/post_actions'
 
-const mSTP = ({errors, entities}) => {
+const mSTP = ({errors, session}) => {
   return {
     errors: Object.values(errors.posts),
     post: {
       title: '',
-      body: ''
+      body: '',
+      user_id: session.id,
     },
     formType: 'Create Post'
   }
