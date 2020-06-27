@@ -1,3 +1,90 @@
-.post-parent-container {
-  margin-top: 75px;
+.post-index-parent {
+  margin-top: 65px;
+  position: relative;
 }
+
+.post-index-header {
+  display: block;
+  position: sticky;
+  height: 50px;
+  width: 100%;
+  padding-top: 20px;
+  margin-left: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.photo-index-add {
+  display: block;
+  position: sticky;
+  width: 100%;
+  height: 20px;
+  padding: 20px;
+  background-color: rgb(247, 248, 250);
+  padding-left: 45px;
+  padding-top: 15px;
+}
+
+input[type=file] {
+  display: none;
+  cursor: pointer;
+}
+
+.photo-index-add label{
+  display: inline;
+  border-radius: 25px;
+  border: 1px solid darkgray;
+  background-color: white;
+  padding: 5px 15px 5px 15px;
+  font-weight: bold;
+  color: #1890ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.photo-index-add label:hover{
+  cursor: pointer;
+}
+
+
+.fa-plus, .fa-trash-alt {
+  color: black;
+  padding-right: 5px;
+}
+
+.post-index-photos {
+  display: block;
+  position:relative;
+  background-color: rgb(247, 248, 250);
+  min-height: 600px;
+  height: 100vh;
+}
+
+.post-index-grid {
+  display: inline-block;
+  float: left;
+  width: 65%;
+  // border: 10px solid black;
+  margin-left: 60px;
+  margin-right: 5px;
+}
+
+.post-index-form {
+  display: flexbox;
+  float: left;
+  // margin-right: 50px;
+  width: 25%;
+  background: white;
+  margin-right: 5px;
+  border-top: 1px solid darkgray;
+  border-left: 1px solid darkgray;
+  border-right: 1px solid darkgray;
+  height: 100vh;
+}
+
+// .post-index-form-inner {
+//   display: flex;
+//   flex-direction: column;
+// }

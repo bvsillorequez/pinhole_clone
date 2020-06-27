@@ -44,29 +44,34 @@ export default class PostForm extends React.Component{
     let createButton = formType === 'Create Post' ? 'Upload' : 'Save Changes'
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <br/><br/><br/><br/><br/><br/>
-        <label>Title
-          <input 
-            type="text" 
-            onChange={this.update('title')} 
-            value={this.state.title}/>
-        </label>
-        {/* {err ? err : ''} */}
-        <label>Description
-          <textarea
-            onChange={this.update('body')} 
-            value={this.state.body}/>
-        </label>
-          { formType === 'Create Post' ? '' : 
-            this.deletePost()}
-        <div>
-          {/* Modal */}
-          <input type="submit" value="Cancel"/>  
-          {/* Modal */}
-          <input type="submit" value={createButton} />
-        </div>
-      </form>
+      <div className="post-form-parent">
+        <form onSubmit={this.handleSubmit}>
+          <div className="seperate">
+            <label>Title
+              <input
+                  type="text"
+                  onChange={this.update('title')}
+                  value={this.state.title} />
+            </label>
+            {/* {err ? err : ''} */}
+            <label>Description
+              <textarea
+                  onChange={this.update('body')}
+                  value={this.state.body} />
+            </label>
+            {formType === 'Create Post' ? '' :
+              this.deletePost()}
+          </div>
+          <div className="seperate">
+            <div className="createButton">
+              {/* Modal */}
+              <input type="submit" value="Cancel" />
+              {/* Modal */}
+              <input type="submit" value={createButton} />
+            </div>
+          </div>
+        </form>
+      </div>
     )
   }
 }
