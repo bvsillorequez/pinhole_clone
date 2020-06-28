@@ -15,31 +15,35 @@ class PostIndex extends React.Component {
         return <PostIndexPhotos key={post.id} post={post}/>
       }
     })
-
     return (
       <div className="post-index-parent">
         <div className="post-index-child">
           <div className="post-index-header">Upload</div>
-          <div className="photo-index-add">
-            <label>
-              <i className="fas fa-plus"></i>
-              Add 
-              <input type="file" accept="image/*"/>
-            </label>
-            <label> 
-              <i className="far fa-trash-alt"></i>
-              Remove
-            </label>
-          </div>
         </div>
         <div className="post-index-photos">
-          <div className="post-index-grid">
-            <ul>
-              {photos}
-            </ul>
+          <div className="post-index-left">
+            <div className="photo-index-add">
+              <label>
+                <i className="fas fa-plus"></i>
+              Add
+              <input type="file" accept="image/*" />
+              </label>
+              <label>
+                <i className="far fa-trash-alt"></i>
+              Remove
+            </label>
+            </div>
+            <div className="post-index-grid">
+              <div className="post-index-grid-container">
+                <ul>
+                  {photos}
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className='post-index-form'>
+          <div className='post-index-right'>
               <CreatePostFormContainer/>
+              {/* <EditPostFormContainer /> */}
           </div>
         </div>
       </div>

@@ -42,34 +42,40 @@ export default class PostForm extends React.Component{
     })}
     
     let createButton = formType === 'Create Post' ? 'Upload' : 'Save Changes'
-
+    debugger
     return (
       <div className="post-form-parent">
+        <div className="post-form-top">
+          1 photo selected
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <div className="seperate">
-            <label>Title
-              <input
-                  type="text"
-                  onChange={this.update('title')}
-                  value={this.state.title} />
-            </label>
-            {/* {err ? err : ''} */}
-            <label>Description
-              <textarea
-                  onChange={this.update('body')}
-                  value={this.state.body} />
-            </label>
-            {formType === 'Create Post' ? '' :
-              this.deletePost()}
-          </div>
-          <div className="seperate">
-            <div className="createButton">
-              {/* Modal */}
-              <input type="submit" value="Cancel" />
-              {/* Modal */}
-              <input type="submit" value={createButton} />
+            <div className='post-form-first'>
+              <div className='post-form-inputs'>
+                <label>Title
+                  <input
+                      type="text"
+                      onChange={this.update('title')}
+                      value={this.state.title} />
+                </label>
+                {/* {err ? err : ''} */}
+                <label>Description
+                  <textarea
+                      onChange={this.update('body')}
+                      value={this.state.body} />
+                </label>
+                {formType === 'Create Post' ? '' :
+                  this.deletePost()}
+              </div>
             </div>
-          </div>
+            <div className="createButton">
+              <div className="createButton-container">
+                {/* Modal */}
+                <input type="submit" className="cancel-button"value="Cancel" />
+                {/* Modal */}
+                <input type="submit" className='upload-button'value={createButton} />
+              </div>
+            </div>
+          
         </form>
       </div>
     )

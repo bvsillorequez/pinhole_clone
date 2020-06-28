@@ -1,24 +1,52 @@
 .post-index-parent {
   margin-top: 65px;
   position: relative;
+  background-color: rgb(247, 248, 250);
+}
+
+.post-index-child {
+  display: block;
+  position: relative;
 }
 
 .post-index-header {
   display: block;
   position: sticky;
+  background-color: white;;
   height: 50px;
-  width: 100%;
   padding-top: 20px;
-  margin-left: 60px;
+  padding-left: 60px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
   font-size: 24px;
 }
 
+
+
+.post-index-photo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(247, 248, 250);
+  min-height: 600px;
+  // width: 75vw;
+  // height: 50vh;
+}
+
+.post-index-left {
+  display: inline-flex;
+  flex-direction: column;
+  // position: absolute;
+  // border: 2px solid black;
+  width: 67%;
+  height: 100vh;
+  background-color: rgb(247, 248, 250);
+}
+
 .photo-index-add {
-  display: block;
-  position: sticky;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  width: 91%;
   height: 20px;
   padding: 20px;
   background-color: rgb(247, 248, 250);
@@ -53,35 +81,35 @@ input[type=file] {
   color: black;
   padding-right: 5px;
 }
-
-.post-index-photos {
-  display: block;
-  position:relative;
-  background-color: rgb(247, 248, 250);
-  min-height: 600px;
-  height: 100vh;
-}
-
 .post-index-grid {
-  display: inline-block;
-  float: left;
-  width: 65%;
+  display: block;
+  // float: left;
+  width: 96%;
+  height: 92vh;
+  background-color: rgb(247, 248, 250);
   // border: 10px solid black;
   margin-left: 60px;
   margin-right: 5px;
+  overflow-y: scroll;
 }
 
-.post-index-form {
-  display: flexbox;
-  float: left;
-  // margin-right: 50px;
-  width: 25%;
+.post-index-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.post-index-right {
+  display: block;
+  float: right;
+  margin-right: 50px;
+  margin-top: 15px;
+  width: 400px;
   background: white;
-  margin-right: 5px;
   border-top: 1px solid darkgray;
   border-left: 1px solid darkgray;
   border-right: 1px solid darkgray;
-  height: 100vh;
+  height: 96vh;
 }
 
 // .post-index-form-inner {
