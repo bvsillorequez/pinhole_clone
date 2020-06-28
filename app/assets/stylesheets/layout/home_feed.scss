@@ -1,0 +1,22 @@
+.home-page-parent {
+  margin-top: 65px;
+  position: relative;
+  background-color: rgb(247, 248, 250);
+}
+
+.home-page-child {
+  display: block;
+  position: relative;
+}
+
+.home-page-header {
+  display: block;
+  position: sticky;
+  background-color: white;;
+  height: 50px;
+  padding-top: 20px;
+  padding-left: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+}

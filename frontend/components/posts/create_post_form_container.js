@@ -3,6 +3,7 @@ import PostForm from './post_form'
 import {createPost} from '../../actions/post_actions'
 
 const mSTP = ({errors, session}) => {
+  debugger
   return {
     errors: Object.values(errors.posts),
     post: {
@@ -15,6 +16,7 @@ const mSTP = ({errors, session}) => {
 }
 
 const mDTP = dispatch => {
+  debugger
   return {
     action: post => dispatch(createPost(post))
   }

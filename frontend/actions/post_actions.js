@@ -30,21 +30,23 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
 
-export const fetchPosts = () => dispatch => (
-  PostAPIUtils.fetchPosts().then(posts => dispatch(receivePosts(posts)))
-)
+export const fetchPosts = () => dispatch => {
+  return PostAPIUtils.fetchPosts().then(posts => {
+    dispatch(receivePosts(posts))})
+}
 
 export const fetchPost = postId => dispatch => (
   PostAPIUtils.fetchPost(postId).then(post => dispatch(receivePost(post)))
 )
 
-export const createPost = post => dispatch => (
-  PostAPIUtils.createPost(post)
+export const createPost = post => dispatch => {
+  debugger
+  return PostAPIUtils.createPost(post)
     .then(createPost => {
       dispatch(receivePost(createPost))
       dispatch(clearErrors())})
     .fail(err => dispatch(receiveErrors(err)))
-)
+}
 
 export const updatePost = post => dispatch => (
   PostAPIUtils.updatePost(post)

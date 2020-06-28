@@ -4,7 +4,6 @@ import EditPostForm from './edit_post_form'
 
 
 const mSTP = (state, ownProps) => {
-  debugger
   return {
     errors: Object.values(state.errors.posts),
     post: state.entities.posts[ownProps.match.params.postId],

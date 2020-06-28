@@ -8,8 +8,10 @@ export default class PostForm extends React.Component{
       title: this.props.post.title,
       body: this.props.post.body || '',
       user_id: this.props.post.user_id,
+      photoFile:  null,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleFile = this.handleFile.bind(this)
   }
 
   update(field){
@@ -20,11 +22,39 @@ export default class PostForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    this.props.action(this.state)
-    this.setState({
-      title: '',
-      body: ''
-    })
+    const formData = new FormData();
+
+    formData.append('post[title]', this.state.title);
+    formData.append('post[body]', this.state.body);
+    formData.append('post[user_id]', this.state.user_id);
+    formData.append('post[photo]', this.state.photoFile);
+    debugger
+    this.props.action(formData)
+      // .then(
+      //   this.setState({
+      //     title: '',
+      //     body: '',
+      //     photoFile: null,
+      //   })
+      // )
+  }
+
+  //image preview
+  // handleFile(e){
+  //   const reader = new FileReader();
+  //   const file = e.currentTarget.files[0];
+  //   reader.onloadend = () =>
+  //     this.setState({ imageUrl: reader.result, imageFile: file });
+
+  //   if (file) {
+  //     reader.readAsDataURL(file);
+  //   } else {
+  //     this.setState({ imageUrl: "", imageFile: null });
+  //   }
+  // }
+
+  handleFile(e){
+    this.setState({ photoFile: e.currentTarget.files[0]})
   }
 
   deletePost() {
@@ -49,6 +79,7 @@ export default class PostForm extends React.Component{
           1 photo selected
         </div>
         <form onSubmit={this.handleSubmit}>
+            <input type="file" onChange={this.handleFile}/>
             <div className='post-form-first'>
               <div className='post-form-inputs'>
                 <label>Title

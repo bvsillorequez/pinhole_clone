@@ -15,6 +15,7 @@ class PostIndex extends React.Component {
         return <PostIndexPhotos key={post.id} post={post}/>
       }
     })
+    
     return (
       <div className="post-index-parent">
         <div className="post-index-child">
@@ -35,7 +36,7 @@ class PostIndex extends React.Component {
             </div>
             <div className="post-index-grid">
               <div className="post-index-grid-container">
-                <ul>
+                <ul className="post-index-grid-container-photos" >
                   {photos}
                 </ul>
               </div>

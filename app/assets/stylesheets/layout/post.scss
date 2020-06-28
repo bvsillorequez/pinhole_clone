@@ -28,7 +28,9 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: rgb(247, 248, 250);
-  min-height: 600px;
+  // min-width: calc(0.25 * 75vh);
+  // border: 1px solid black;
+  // min-height: 600px;
   // width: 75vw;
   // height: 50vh;
 }
@@ -38,9 +40,10 @@
   flex-direction: column;
   // position: absolute;
   // border: 2px solid black;
-  width: 67%;
-  height: 100vh;
+  // width: 67%;
+  // height: 100vh;
   background-color: rgb(247, 248, 250);
+  // overflow: hidden;
 }
 
 .photo-index-add {
@@ -54,10 +57,10 @@
   padding-top: 15px;
 }
 
-input[type=file] {
-  display: none;
-  cursor: pointer;
-}
+// input[type=file] {
+//   display: none;
+//   cursor: pointer;
+// }
 
 .photo-index-add label{
   display: inline;
@@ -84,7 +87,8 @@ input[type=file] {
 .post-index-grid {
   display: block;
   // float: left;
-  width: 96%;
+  min-width: calc(.50 * 70vw);
+  width: calc(0.75 * 65vw);
   height: 92vh;
   background-color: rgb(247, 248, 250);
   // border: 10px solid black;
@@ -96,7 +100,30 @@ input[type=file] {
 .post-index-grid-container {
   display: flex;
   flex-wrap: wrap;
+}
 
+.post-index-grid-container > ul {
+  display: flex;
+  flex-flow: row wrap;
+  // max-height: 200px;
+  // max-width: 300px;
+  // padding: 20px;
+}
+.post-index-grid-container-photos > li{
+  // display: flex;
+  // flex-flow: row wrap;
+  // max-height: 200px;
+  // width: 400px;
+  // max-width: 200px;
+  padding: 20px;
+  // border: 1px solid black;
+}
+.post-index-grid-container-photos > li > img{
+  max-height: 200px;
+  // width: 400px;
+  max-width: 200px;
+  padding: 3px;
+  border: 2px solid #2867e5;
 }
 
 .post-index-right {

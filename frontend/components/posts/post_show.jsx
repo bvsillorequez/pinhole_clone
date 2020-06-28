@@ -7,12 +7,14 @@ class PostShow extends React.Component {
 
   render () {
     if (!this.props.post) return null;
+    
     return (
       <>
         <div className="post-parent-container">
           <img src=""/>
           <div className="post-info">
             <h5>{this.props.post.title}</h5>
+            <img src={this.props.post.photoUrl} alt=""/>
             <h6>by: {this.props.post.user_id}</h6>
             <p>Taken: {this.props.post.created_at}</p>
             <p>{this.props.post.body}</p>
