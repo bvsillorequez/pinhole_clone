@@ -40,11 +40,11 @@ export const fetchPost = postId => dispatch => (
 )
 
 export const createPost = post => dispatch => {
-  debugger
   return PostAPIUtils.createPost(post)
     .then(createPost => {
       dispatch(receivePost(createPost))
-      dispatch(clearErrors())})
+      dispatch(clearErrors())
+    })
     .fail(err => dispatch(receiveErrors(err)))
 }
 

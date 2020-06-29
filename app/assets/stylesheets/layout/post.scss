@@ -57,10 +57,10 @@
   padding-top: 15px;
 }
 
-// input[type=file] {
-//   display: none;
-//   cursor: pointer;
-// }
+input[type=file] {
+  display: none;
+  cursor: pointer;
+}
 
 .photo-index-add label{
   display: inline;
@@ -88,7 +88,7 @@
   display: block;
   // float: left;
   min-width: calc(.50 * 70vw);
-  width: calc(0.75 * 65vw);
+  width: calc(0.75 * 88vw);
   height: 92vh;
   background-color: rgb(247, 248, 250);
   // border: 10px solid black;

@@ -6,12 +6,12 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.with_attached_photos.find_by(id: params[:id])
   end
 
   def create
-    @post = Post.new(post_params)
     debugger
+    @post = Post.new(post_params)
     if @post.user_id == current_user.id && @post.save
       render 'api/posts/show'
     else
@@ -38,6 +38,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :photo, :user_id)
+    params.require(:post).permit(:title, :body, :user_id, photo: [])
   end
 end

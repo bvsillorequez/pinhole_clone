@@ -2,7 +2,6 @@ const { RECEIVE_ERRORS, CLEAR_ERRORS } = require("../actions/post_actions")
 
 const PostErrorsReducer = (state ={}, action) => {
   Object.freeze(state)
-  debugger
   switch(action.type){
     case RECEIVE_ERRORS:
       return action.errors
