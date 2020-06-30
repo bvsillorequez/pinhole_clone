@@ -18,7 +18,6 @@ class Post < ApplicationRecord
   has_many_attached :photo
 
   def ensure_photo
-    debugger
     unless self.photo.attached?
       errors[:photo] << "must be attached"
     end

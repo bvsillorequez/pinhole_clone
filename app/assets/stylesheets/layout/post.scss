@@ -86,12 +86,10 @@ input[type=file] {
 }
 .post-form-layout-grid {
   display: block;
-  // float: left;
   min-width: calc(.50 * 70vw);
   width: calc(0.75 * 88vw);
   height: 92vh;
   background-color: rgb(247, 248, 250);
-  // border: 10px solid black;
   margin-left: 60px;
   margin-right: 5px;
   overflow-y: scroll;
@@ -110,18 +108,14 @@ input[type=file] {
   padding: 20px;
 }
 
-// .post-form-layout-grid-container-photos > li > img{
-//   border: 2px solid #2867e5;
-// }
- .selected {
+.selected {
    border: 2px solid #2867e5;
- }
+}
+
 .post-form-layout-grid-container-photos > li > img{
   max-height: 300px;
-  // width: 400px;
   max-width: 300px;
   padding: 3px;
-  
 }
 
 .post-form-layout-grid-container-photos > li > img:hover {
@@ -144,8 +138,3 @@ input[type=file] {
   border-right: 1px solid darkgray;
   height: 96vh;
 }
-
-// .post-index-form-inner {
-//   display: flex;
-//   flex-direction: column;
-// }

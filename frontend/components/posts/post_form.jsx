@@ -72,6 +72,13 @@ export default class PostForm extends React.Component{
     selected.classList.toggle("selected")
   }
 
+  deleteImg() {
+    this.setState ({
+      photoFile: [],
+      photoUrl: [],
+    })
+  }
+
   deletePost() {
     return (
       <button onClick={()=> this.props.deletePost(post.id)}>Delete photo</button>
@@ -108,12 +115,17 @@ export default class PostForm extends React.Component{
               <label>
                 <i className="fas fa-plus"></i>
                 Add
-                <input type="file" accept="image/*" onChange={this.handleFile} multiple />
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  onChange={this.handleFile} 
+                  multiple />
               </label>
               <label>
-                <i className="far fa-trash-alt"></i>
-                Remove
-                <input type="submit" onClick={this.deleteImg}/>
+                <div onClick={this.deleteImg}>
+                  <i className="far fa-trash-alt"></i>
+                  Remove
+                </div>
               </label>
             </div>
             <div className="post-form-layout-grid">
