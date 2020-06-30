@@ -1,15 +1,15 @@
-.post-index-parent {
+.post-form-layout-parent {
   margin-top: 65px;
   position: relative;
   background-color: rgb(247, 248, 250);
 }
 
-.post-index-child {
+.post-form-layout-child {
   display: block;
   position: relative;
 }
 
-.post-index-header {
+.post-form-layout-header {
   display: block;
   position: sticky;
   background-color: white;;
@@ -23,7 +23,7 @@
 
 
 
-.post-index-photo {
+.post-form-layout-photo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,7 +35,7 @@
   // height: 50vh;
 }
 
-.post-index-left {
+.post-form-layout-left {
   display: inline-flex;
   flex-direction: column;
   // position: absolute;
@@ -46,7 +46,7 @@
   // overflow: hidden;
 }
 
-.photo-index-add {
+.photo-form-layout-add {
   display: flex;
   align-items: center;
   width: 91%;
@@ -62,7 +62,7 @@ input[type=file] {
   cursor: pointer;
 }
 
-.photo-index-add label{
+.photo-form-layout-add label{
   display: inline;
   border-radius: 25px;
   border: 1px solid darkgray;
@@ -75,7 +75,7 @@ input[type=file] {
   margin-left: 15px;
 }
 
-.photo-index-add label:hover{
+.photo-form-layout-add label:hover{
   cursor: pointer;
 }
 
@@ -84,7 +84,7 @@ input[type=file] {
   color: black;
   padding-right: 5px;
 }
-.post-index-grid {
+.post-form-layout-grid {
   display: block;
   // float: left;
   min-width: calc(.50 * 70vw);
@@ -97,37 +97,43 @@ input[type=file] {
   overflow-y: scroll;
 }
 
-.post-index-grid-container {
+.post-form-layout-grid-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.post-index-grid-container > ul {
+.post-form-layout-grid-container > ul {
   display: flex;
   flex-flow: row wrap;
-  // max-height: 200px;
-  // max-width: 300px;
-  // padding: 20px;
 }
-.post-index-grid-container-photos > li{
-  // display: flex;
-  // flex-flow: row wrap;
-  // max-height: 200px;
-  // width: 400px;
-  // max-width: 200px;
+.post-form-layout-grid-container-photos > li{
   padding: 20px;
-  // border: 1px solid black;
 }
-.post-index-grid-container-photos > li > img{
-  max-height: 200px;
+
+// .post-form-layout-grid-container-photos > li > img{
+//   border: 2px solid #2867e5;
+// }
+ .selected {
+   border: 2px solid #2867e5;
+ }
+.post-form-layout-grid-container-photos > li > img{
+  max-height: 300px;
   // width: 400px;
-  max-width: 200px;
+  max-width: 300px;
   padding: 3px;
+  
+}
+
+.post-form-layout-grid-container-photos > li > img:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+  opacity: 0.9;
   border: 2px solid #2867e5;
 }
 
-.post-index-right {
+.post-form-layout-right {
   display: block;
+  position: relative;
   float: right;
   margin-right: 50px;
   margin-top: 15px;

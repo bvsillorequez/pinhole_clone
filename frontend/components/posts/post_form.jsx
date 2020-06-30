@@ -1,5 +1,4 @@
 import React from 'react'
-import PostIndex from './post_index'
 
 export default class PostForm extends React.Component{
   constructor(props){
@@ -54,20 +53,23 @@ export default class PostForm extends React.Component{
 
     files.forEach(file => {
       const fileReader = new FileReader();
-      debugger
+     
       if (file) {
         fileReader.readAsDataURL(file);
-        debugger
       } else {
         this.setState({ photoUrl: [], photoFile: [] });
       }
 
       fileReader.onloadend = () => {
-        debugger
         newFiles.push(fileReader.result)
         this.setState({ photoUrl: newFiles, photoFile: files })
       }
     })
+  }
+
+  selectImg() {
+    const selected = document.getElementsByClassName("upload-img")[0]
+    selected.classList.toggle("selected")
   }
 
   deletePost() {
@@ -87,18 +89,22 @@ export default class PostForm extends React.Component{
     let createButton = formType === 'Create Post' ? 'Upload' : 'Save Changes'
     
     const preview = this.state.photoUrl.map((url, i) => {
-      return <li key={i}><img src={url} /></li>
+      return <li key={i}>
+        <img className="upload-img"
+            onClick={this.selectImg}
+            src={url} />
+        </li>
     })
-    debugger
-    return (
-      <div className="post-form-top-container post-index-parent">
 
-        <div className="post-index-child">
-          <div className="post-index-header">Upload</div>
+    return (
+      <div className="post-form-top-container post-form-layout-parent">
+
+        <div className="post-form-layout-child">
+          <div className="post-form-layout-header">Upload</div>
         </div>
-        <div className="post-index-photos">
-          <div className="post-index-left">
-            <div className="photo-index-add">
+        <div className="post-form-layout-photo">
+          <div className="post-form-layout-left">
+            <div className="photo-form-layout-add">
               <label>
                 <i className="fas fa-plus"></i>
                 Add
@@ -107,35 +113,25 @@ export default class PostForm extends React.Component{
               <label>
                 <i className="far fa-trash-alt"></i>
                 Remove
+                <input type="submit" onClick={this.deleteImg}/>
               </label>
             </div>
-            <div className="post-index-grid">
-              <div className="post-index-grid-container">
-                <ul className="post-index-grid-container-photos" >
+            <div className="post-form-layout-grid">
+              <div className="post-form-layout-grid-container">
+                <ul className="post-form-layout-grid-container-photos" >
                   {preview}
                 </ul>
               </div>
             </div>
           </div>
-        
 
-
-
-
-
-
-
-
-
-
-        {/* right part of page */}
-        <div className="post-index-right">
+        <div className="post-form-layout-right">
           <div className="post-form-parent">
             <div className="post-form-top">
-              {this.state.photoFile.length} photos selected
+                {this.state.photoFile.length > 0 ?  
+                `${this.state.photoFile.length} photos selected` : ''} 
             </div>
             <form onSubmit={this.handleSubmit}>
-                {/* <input type="file" onChange={this.handleFile} multiple/> */}
                 <div className='post-form-first'>
                   <div className='post-form-inputs'>
                     <label>Title

@@ -10,7 +10,7 @@ import HomeFeed from './home_feed'
 import PostIndexContainer from './posts/post_index_container'
 import PostShowContainer from './posts/post_show_container'
 import EditPostContainer from './posts/edit_post_form_container'
-
+import UploadForm from './posts/upload_form'
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/" component={FrontPage} />
 
-        {/* <ProtectedRoute exact path="/upload" component={} /> */}
+        <ProtectedRoute exact path="/upload" component={UploadForm} />
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
         <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
         <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
