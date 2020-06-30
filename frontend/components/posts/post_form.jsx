@@ -1,4 +1,5 @@
 import React from 'react'
+import modal from '../modal/modal'
 
 export default class PostForm extends React.Component{
   constructor(props){
@@ -123,9 +124,11 @@ export default class PostForm extends React.Component{
                   multiple />
               </label>
               <label>
-                <div onClick={this.deleteImg}>
-                  <i className="far fa-trash-alt"></i>
-                  Remove
+                <div onClick={this.props.removeModal}>
+                  <div onClick={this.deleteImg}>
+                    <i className="far fa-trash-alt"></i>
+                    Remove
+                  </div>
                 </div>
               </label>
             </div>
@@ -166,7 +169,8 @@ export default class PostForm extends React.Component{
                 <div className="createButton">
                   <div className="createButton-container">
                     {/* Modal */}
-                    <input type="submit" className="cancel-button"value="Cancel" />
+                    {this.props.cancelModal}
+                    {/* <input type="submit" className="cancel-button" value="Cancel" /> */}
                     {/* Modal */}
                     <input type="submit" className='upload-button'value={createButton} />
                   </div>

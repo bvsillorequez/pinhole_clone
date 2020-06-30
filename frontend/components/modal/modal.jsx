@@ -1,28 +1,29 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
+import CancelModal from './cancel_modal'
+import RemoveModal from './remove_modal'
 
 function Modal({ modal, closeModal }) {
+  // debugger
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
-    case 'login':
-      component = <LoginFormContainer />;
+    case 'cancel':
+      component = <CancelModal closeModal={closeModal}/>;
       break;
-    case 'signup':
-      component = <SignupFormContainer />;
+    case 'remove':
+      component = <RemoveModal closeModal={closeModal}/>;
       break;
     default:
       return null;
   }
   return (
-    <div className="modal-background" onClick={closeModal}>
+    <div className="modal-background">
       <div className="modal-child" onClick={e => e.stopPropagation()}>
-        {component}
+        { component }
       </div>
     </div>
   );

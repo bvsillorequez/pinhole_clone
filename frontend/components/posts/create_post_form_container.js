@@ -1,6 +1,8 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import PostForm from './post_form'
 import {createPost} from '../../actions/post_actions'
+import { openModal, closeModal} from '../../actions/modal_actions'
 
 const mSTP = ({errors, session}) => {
   // debugger
@@ -16,9 +18,16 @@ const mSTP = ({errors, session}) => {
 }
 
 const mDTP = dispatch => {
-  // debugger
   return {
-    action: post => dispatch(createPost(post))
+    action: post => dispatch(createPost(post)),
+    cancelModal: (
+      <input type="button"
+        className="cancel-button"
+        value= "Cancel"
+        onClick={() => dispatch(openModal('cancel'))}/>
+    ),
+    removeModal: () => dispatch(openModal('remove')),
+    closeModal: () => dispatch(closeModal())
   }
 }
 

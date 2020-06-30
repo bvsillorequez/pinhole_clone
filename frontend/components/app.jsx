@@ -11,6 +11,7 @@ import PostIndexContainer from './posts/post_index_container'
 import PostShowContainer from './posts/post_show_container'
 import EditPostContainer from './posts/edit_post_form_container'
 import UploadForm from './posts/upload_form'
+import Modal from './modal/modal'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <li><Navbar/></li>
         <li><HeaderContainer/></li>
       </header>
+      <Modal />
       <Switch>
         <ProtectedRoute exact path="/home" component={HomeFeed}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
