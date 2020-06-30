@@ -13,6 +13,7 @@ export default class PostForm extends React.Component{
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFile = this.handleFile.bind(this)
+    this.deleteImg = this.deleteImg.bind(this)
   }
 
   update(field){
