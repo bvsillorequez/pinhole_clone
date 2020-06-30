@@ -6,7 +6,8 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.with_attached_photos.find_by(id: params[:id])
+    # @post = Post.with_attached_photos.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def create

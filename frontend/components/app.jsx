@@ -23,14 +23,14 @@ const App = () => {
       <Modal />
       <Switch>
         <ProtectedRoute exact path="/home" component={HomeFeed}/>
+        <ProtectedRoute exact path="/upload" component={UploadForm} />
+        <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
+        <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
+        <Route exact path="/posts/:postId" component={PostShowContainer} />
+
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/" component={FrontPage} />
-
-        <ProtectedRoute exact path="/upload" component={UploadForm} />
-        <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
-        <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
-        <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
 
         <Redirect to='/' />
         <Route path="/" component={FrontPage} />

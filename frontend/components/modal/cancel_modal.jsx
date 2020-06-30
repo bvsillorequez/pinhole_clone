@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const CancelModal = ({closeModal}) => {
   return (
     <div className="upload-modal-container">
-      <i class="fas fa-exclamation-triangle fa-5x"></i>
+      <i className="fas fa-exclamation-triangle fa-5x"></i>
       <h3>You have unsaved changes</h3>
       <h5>
         Are you sure you want to leave without saving?  

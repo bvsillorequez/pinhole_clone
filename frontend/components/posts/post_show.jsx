@@ -7,20 +7,30 @@ class PostShow extends React.Component {
 
   render () {
     if (!this.props.post) return null;
-    
+    const photo = this.props.post.photoUrl.map((url, i) => {
+      return <img src={url} key={i} className='post-show-img'/>
+    })
     return (
       <>
-        <div className="post-parent-container">
-          <img src=""/>
-          <div className="post-info">
-            <h5>{this.props.post.title}</h5>
-            <img src={this.props.post.photoUrl} alt=""/>
-            <h6>by: {this.props.post.user_id}</h6>
-            <p>Taken: {this.props.post.created_at}</p>
-            <p>{this.props.post.body}</p>
-          </div>
-          <div className="post-comments">
-            {/* THIS WILL BE A COMMENT CONTAINER */}
+        <div className="post-show-parent-container">
+          <div className='post-show-index'>
+            <div className='post-show-image-container'>
+              <div className='post-show-photo-control'>
+                {photo}
+              </div>
+            </div>
+            <div className='post-show-info-parent'> 
+
+              <div className="post-show-info">
+                <h5>{this.props.post.title}</h5>
+                <h6>by {this.props.post.user}</h6>
+                <p>Taken: {this.props.post.created_at}</p>
+                <p>{this.props.post.body}</p>
+              </div>
+              <div className="post-comments">
+                {/* THIS WILL BE A COMMENT CONTAINER */}
+              </div>
+            </div>
           </div>
         </div>
       </>
