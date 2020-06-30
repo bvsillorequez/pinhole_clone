@@ -9,7 +9,7 @@ class PostIndex extends React.Component {
   }
 
   render () {
-    
+    if (!this.props.posts) return null;
     const photos = this.props.posts.map(post => {
       if (post.user_id === this.props.session) {
         return <PostIndexPhotos key={post.id} post={post}/>
@@ -19,9 +19,11 @@ class PostIndex extends React.Component {
     return (
       <div className="post-index-photos-conatiner">
         <div className="post-index-grid-container">
-          <ul className="post-index-grid-container-photos" >
-            {photos}
-          </ul>
+          <div className="post-index-grid-inner">
+            <ul className="post-index-grid-container-photos" >
+              {photos}
+            </ul>
+          </div>
         </div>
       </div>
     )

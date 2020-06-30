@@ -50,7 +50,7 @@ export default class PostForm extends React.Component{
   }
 
   handleFile(e){
-    debugger
+
     const files = Array.from(e.currentTarget.files);
     let newFiles = []
 
@@ -64,13 +64,10 @@ export default class PostForm extends React.Component{
       }
 
       fileReader.onloadend = () => {
-        debugger
         newFiles.push(fileReader.result)
-        debugger
         this.setState({ photoUrl: newFiles, photoFile: files })
       }
     })
-    debugger
   }
 
   selectImg() {
@@ -109,7 +106,7 @@ export default class PostForm extends React.Component{
             src={url} />
         </li>
     })
-    debugger
+  
     return (
       <div className="post-form-top-container post-form-layout-parent">
 
@@ -118,6 +115,8 @@ export default class PostForm extends React.Component{
         </div>
         <div className="post-form-layout-photo">
           <div className="post-form-layout-left">
+
+            
             <div className="photo-form-layout-add">
               <label>
                 <i className="fas fa-plus"></i>
@@ -137,6 +136,8 @@ export default class PostForm extends React.Component{
                 </div>
               </label>
             </div>
+
+
             <div className="post-form-layout-grid">
               <div className="post-form-layout-grid-container">
                 <ul className="post-form-layout-grid-container-photos" >

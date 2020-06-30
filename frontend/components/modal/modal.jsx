@@ -5,7 +5,7 @@ import CancelModal from './cancel_modal'
 import RemoveModal from './remove_modal'
 
 function Modal({ modal, closeModal }) {
-  // debugger
+
   if (!modal) {
     return null;
   }

@@ -5,11 +5,21 @@ class PostShow extends React.Component {
     this.props.fetchPost(this.props.match.params.postId)
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.match.params.postId !== this.props.match.params.postId) {
+    this.props.fetchPost(this.props.match.params.postId)
+    }
+  }
+
   render () {
     if (!this.props.post) return null;
-    const photo = this.props.post.photoUrl.map((url, i) => {
+
+    const photoArray = Array.isArray(this.props.post.photoUrl) ? this.props.post.photoUrl : [this.props.post.photoUrl]
+
+    const photo = photoArray.map((url, i) => {
       return <img src={url} key={i} className='post-show-img'/>
     })
+    
     return (
       <>
         <div className="post-show-parent-container">

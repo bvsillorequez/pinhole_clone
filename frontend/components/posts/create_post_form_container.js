@@ -5,7 +5,6 @@ import {createPost} from '../../actions/post_actions'
 import { openModal, closeModal} from '../../actions/modal_actions'
 
 const mSTP = ({errors, session}) => {
-  // debugger
   return {
     errors: Object.values(errors.posts),
     post: {

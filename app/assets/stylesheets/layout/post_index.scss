@@ -1,0 +1,30 @@
+.post-index-parent-container {
+  display: block;
+  position: relative;
+  background-color: aliceblue;
+  height: 100vh;
+}
+
+.post-index-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.post-index-grid-inner {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.post-index-img {
+  max-height: 400px;
+  padding: 5px
+}
+
+.post-index-grid-container-photos {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px;
+}

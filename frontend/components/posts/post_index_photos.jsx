@@ -1,18 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PostIndexPhotos = props => {
   return (
     <li>
-      {/* {props.post.photoUrl ? <img src={props.post.photoUrl} alt=""/> : ''} */}
-      <br/>
-      Post ID:{props.post.id}
-      <br/>
-      {props.post.title}
-      <br/>
-      {props.post.body}
-      <br/>
-      User ID: {props.post.user_id}
-      <br/>
+      <Link to={`/posts/${props.post.id}`}>
+        <img className='post-index-img' src={props.post.photoUrl} />
+      </Link>
     </li>
   )
 }
