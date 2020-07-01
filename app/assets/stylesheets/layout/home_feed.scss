@@ -26,10 +26,20 @@
   flex-flow: row wrap;
   width: calc(0.90 * 100vw);
   padding-top: 20px;
+  margin-left: 55px;
 }
 
 .home-grid-container-photos {
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    // display: inline-flex;
+    // flex-flow: row wrap;
+    // justify-content: center;
+    column-count: 4;
+    column-gap: 1em;
+}
+
+.home-grid-container-photos img {
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+    max-height: fit-content;
 }

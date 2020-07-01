@@ -59,3 +59,13 @@
   font-family: Arial, Helvetica, sans-serif;
   line-height: 2;
 }
+
+.post-show-navbar {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+}
+.post-show-navbar i{
+  margin-right: 12px;
+  color: black;
+}

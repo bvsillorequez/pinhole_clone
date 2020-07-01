@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class PostShow extends React.Component {
   componentDidMount(){
@@ -11,6 +12,21 @@ class PostShow extends React.Component {
     }
   }
 
+  addRemove() {
+    if (this.props.post.user_id === this.props.session) {
+      return (
+        <div className="post-show-navbar">
+          <Link to='/upload'>
+            <i className="far fa-plus-square fa-lg"></i>
+          </Link>
+          <Link to={`/posts/${this.props.post.id}/edit`}>
+            <i className="far fa-edit fa-lg"></i>
+          </Link>
+        </div>
+      )
+    }
+  }
+
   render () {
     if (!this.props.post) return null;
 
@@ -19,6 +35,8 @@ class PostShow extends React.Component {
     const photo = photoArray.map((url, i) => {
       return <img src={url} key={i} className='post-show-img'/>
     })
+
+    
     
     return (
       <>
@@ -30,8 +48,11 @@ class PostShow extends React.Component {
               </div>
             </div>
             <div className='post-show-info-parent'> 
-
+            
               <div className="post-show-info">
+                
+                {this.addRemove()}
+
                 <h5>{this.props.post.title}</h5>
                 <h6>by {this.props.post.user}</h6>
                 <p>Taken: {this.props.post.created_at}</p>
