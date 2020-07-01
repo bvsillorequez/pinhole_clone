@@ -1,7 +1,4 @@
 .post-form-parent {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   display: block;
   position: relative;
   padding: 18px;
@@ -25,31 +22,18 @@
   box-shadow: black;
 }
 
-// form {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   height: 95vh;
-// }
 .post-form-first {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
   height: 77vh;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
 }
 
 .post-form-inputs {
   display: block;
   width: 315px;
 }
-// // .post-form-parent > form {
-// //   display: flex;
-// //   flex-direction: column;
-// //   justify-content: space-between;
-// // }
+
 .post-form-inputs > label {
   display: flex;
   flex-direction: column;
@@ -78,7 +62,6 @@
   height: 60px;
   padding-top: 30px;
   margin-left: -19px;
-  // padding: 30px;
 }
 
 .createButton-container > .upload-button{

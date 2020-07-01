@@ -39,7 +39,6 @@ export default class PostForm extends React.Component{
       }
     }
     
-    debugger
     this.props.action(formData)
       .then(
         this.setState({
@@ -172,7 +171,6 @@ export default class PostForm extends React.Component{
                           onChange={this.update('title')}
                           value={this.state.title} />
                     </label>
-                    {/* {err ? err : ''} */}
                     <label>Description
                       <textarea
                           onChange={this.update('body')}
@@ -184,10 +182,7 @@ export default class PostForm extends React.Component{
                 </div>
                 <div className="createButton">
                   <div className="createButton-container">
-                    {/* Modal */}
                     {this.props.cancelModal}
-                    {/* <input type="submit" className="cancel-button" value="Cancel" /> */}
-                    {/* Modal */}
                     <input type="submit" className='upload-button' value={createButton} />
                   </div>
                 </div>

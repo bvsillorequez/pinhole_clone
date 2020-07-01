@@ -20,9 +20,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    debugger
     @post = Post.find_by(id: params[:post][:id])
-    debugger
     if @post.user_id == current_user.id && @post && @post.update(post_params)
       render 'api/posts/show'
     # else
