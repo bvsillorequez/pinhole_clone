@@ -88,7 +88,7 @@ post14.save!
 post15 = Post.new(title:'Snow Valley' , body:'Yosemite Valley on a snowy morning' , user_id: user4.id)
 file = open('https://pinhole-seed.s3-us-west-1.amazonaws.com/pinhole_seeds/landscape1.jpeg')
 post15.photo.attach(io: file, filename: 'landscape1.jpeg')
-post.save!
+post15.save!
 
 post16 = Post.new(title:'Patagonia' , body:'A morning mist in Patagonia' , user_id: user4.id)
 file = open('https://pinhole-seed.s3-us-west-1.amazonaws.com/pinhole_seeds/landscape2.jpg')
