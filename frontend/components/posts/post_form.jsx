@@ -26,19 +26,20 @@ export default class PostForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-
+    
     const formData = new FormData()
 
+    formData.append('post[id]', this.state.id)
     formData.append('post[title]', this.state.title)
     formData.append('post[body]', this.state.body)
     formData.append('post[user_id]', this.state.user_id)
-    
     if (this.state.photoFile) {
       for (let i = 0; i < this.state.photoFile.length; i++){
         formData.append("post[photo][]", this.state.photoFile[i])
       }
     }
-
+    
+    debugger
     this.props.action(formData)
       .then(
         this.setState({
@@ -86,7 +87,7 @@ export default class PostForm extends React.Component{
 
   deletePost() {
     return (
-      <button onClick={()=> this.props.deletePost(this.props.post.id)}>Delete photo</button>
+      <button className="deleteButton" onClick={()=> this.props.deletePost(this.props.post.id)}>Delete photo</button>
     )
   }
 
@@ -150,7 +151,7 @@ export default class PostForm extends React.Component{
             <div className="post-form-layout-grid">
               <div className="post-form-layout-grid-container">
                 <ul className="post-form-layout-grid-container-photos" >
-                  {formType === 'Create Post' ? preview : <img src={this.props.post.photoUrl}/>}
+                  {formType === 'Create Post' ? preview : <img className="editImage"src={this.props.post.photoUrl}/>}
                 </ul>
               </div>
             </div>

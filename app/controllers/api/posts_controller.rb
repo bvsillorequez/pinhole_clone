@@ -20,7 +20,9 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
+    debugger
+    @post = Post.find_by(id: params[:post][:id])
+    debugger
     if @post.user_id == current_user.id && @post && @post.update(post_params)
       render 'api/posts/show'
     # else
@@ -38,6 +40,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :user_id, photo: [])
+    params.require(:post).permit(:id, :title, :body, :user_id, photo: [])
   end
 end

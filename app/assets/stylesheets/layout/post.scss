@@ -110,17 +110,21 @@ input[type=file] {
    border: 2px solid #2867e5;
 }
 
-.post-form-layout-grid-container-photos > li > img{
+.post-form-layout-grid-container-photos > li > img, .editImage{
   max-height: 300px;
   max-width: 300px;
   padding: 3px;
 }
 
-.post-form-layout-grid-container-photos > li > img:hover {
+.post-form-layout-grid-container-photos > li > img:hover, .editImage:hover {
   cursor: pointer;
   filter: brightness(90%);
   opacity: 0.9;
   border: 2px solid #2867e5;
+}
+
+.editImage {
+  margin-top: 15px;
 }
 
 .post-form-layout-right {

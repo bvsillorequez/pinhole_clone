@@ -15,7 +15,7 @@ const ProfileDropdown = ({logout}) => {
       <ul id="profiledropdown">
         <li><Link to={`/api/users/user.id`} className="profileLink">Profile</Link></li>
         <li><Link to={`/posts`} className="profileLink">Galleries</Link></li>
-        <li><Link to={`/api/users/`} className="profileLink">Liked photos</Link></li>
+        <li><Link to={`/users/`} className="profileLink">Liked photos</Link></li>
         <br/>
         <li onClick={logout}>Logout</li>
       </ul>

@@ -1,6 +1,8 @@
 import { connect } from "react-redux"
 import { fetchPost, updatePost, deletePost } from "../../actions/post_actions"
 import EditPostForm from './edit_post_form'
+import React from 'react'
+import {openModal, closeModal} from '../../actions/modal_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -16,7 +18,15 @@ const mDTP = dispatch => {
   return {
     fetchPost: postId => dispatch(fetchPost(postId)),
     deletePost: postId => dispatch(deletePost(postId)),
-    action: post => dispatch(updatePost(post))
+    action: post => dispatch(updatePost(post)),
+    cancelModal: (
+      <input type="button"
+        className="cancel-button"
+        value="Cancel"
+        onClick={() => dispatch(openModal('cancel'))} />
+    ),
+    closeModal: () => dispatch(closeModal())
+    
   }
 }
 

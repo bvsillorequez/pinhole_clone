@@ -1,6 +1,5 @@
 import React from 'react'
 import PostForm from './post_form'
-import PostIndexPhotos from './post_index_photos'
 
 export default class EditPostForm extends React.Component {
   componentDidMount() {
@@ -8,7 +7,7 @@ export default class EditPostForm extends React.Component {
   }
 
   render() {
-    const { action, formType, post, session, deletePost } = this.props;
+    const { action, formType, post, session, deletePost, cancelModal, closeModal } = this.props;
   
     if (!post || post.user_id !== session) return null;
 
@@ -19,7 +18,9 @@ export default class EditPostForm extends React.Component {
             action={action}
             formType={formType}
             post={post}
-            deletePost={deletePost} />
+            deletePost={deletePost} 
+            cancelModal= {cancelModal}
+            closeModal= {closeModal}/>
         </div>
       </div>
     );
