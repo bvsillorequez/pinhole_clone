@@ -15,6 +15,7 @@ export default class PostForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFile = this.handleFile.bind(this)
     this.deleteImg = this.deleteImg.bind(this)
+    
   }
 
   update(field){
@@ -85,7 +86,31 @@ export default class PostForm extends React.Component{
 
   deletePost() {
     return (
-      <button onClick={()=> this.props.deletePost(post.id)}>Delete photo</button>
+      <button onClick={()=> this.props.deletePost(this.props.post.id)}>Delete photo</button>
+    )
+  }
+
+  addRemoveFeature () {
+    return (
+      <div className="photo-form-layout-add">
+        <label>
+          <i className="fas fa-plus"></i>
+                  Add
+                  <input
+            type="file"
+            accept="image/*"
+            onChange={this.handleFile}
+            multiple />
+        </label>
+        <label>
+          <div onClick={this.props.removeModal}>
+            <div onClick={this.deleteImg}>
+              <i className="far fa-trash-alt"></i>
+                      Remove
+                    </div>
+          </div>
+        </label>
+      </div>
     )
   }
 
@@ -111,37 +136,21 @@ export default class PostForm extends React.Component{
       <div className="post-form-top-container post-form-layout-parent">
 
         <div className="post-form-layout-child">
-          <div className="post-form-layout-header">Upload</div>
+          <div className="post-form-layout-header">
+            {formType === 'Create Post' ? 'Upload' : 'Photo manager'}
+          </div>
         </div>
         <div className="post-form-layout-photo">
           <div className="post-form-layout-left">
 
             
-            <div className="photo-form-layout-add">
-              <label>
-                <i className="fas fa-plus"></i>
-                Add
-                <input 
-                  type="file" 
-                  accept="image/*" 
-                  onChange={this.handleFile} 
-                  multiple />
-              </label>
-              <label>
-                <div onClick={this.props.removeModal}>
-                  <div onClick={this.deleteImg}>
-                    <i className="far fa-trash-alt"></i>
-                    Remove
-                  </div>
-                </div>
-              </label>
-            </div>
+            { formType === 'Create Post' ? this.addRemoveFeature() : ''}
 
 
             <div className="post-form-layout-grid">
               <div className="post-form-layout-grid-container">
                 <ul className="post-form-layout-grid-container-photos" >
-                  {preview}
+                  {formType === 'Create Post' ? preview : <img src={this.props.post.photoUrl}/>}
                 </ul>
               </div>
             </div>
@@ -178,7 +187,7 @@ export default class PostForm extends React.Component{
                     {this.props.cancelModal}
                     {/* <input type="submit" className="cancel-button" value="Cancel" /> */}
                     {/* Modal */}
-                    <input type="submit" className='upload-button'value={createButton} />
+                    <input type="submit" className='upload-button' value={createButton} />
                   </div>
                 </div>
               

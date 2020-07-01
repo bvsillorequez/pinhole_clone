@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
   return {
     fetchPost: postId => dispatch(fetchPost(postId)),
-    deletePost: postId => dispatchEvent(deletePost(postId)),
+    deletePost: postId => dispatch(deletePost(postId)),
     action: post => dispatch(updatePost(post))
   }
 }
