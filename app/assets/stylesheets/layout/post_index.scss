@@ -16,15 +16,28 @@
 .post-index-grid-inner {
   display: flex;
   flex-flow: row wrap;
+  margin: 50px;
+}
+
+// .post-index-img {
+//   max-height: 400px;
+//   padding: 5px
+// }
+
+// .post-index-grid-container-photos {
+//     display: flex;
+//     flex-flow: row wrap;
+//     padding: 30px;
+// }
+.post-index-grid-container-photos {
+    column-count: 3;
+    column-gap: 1em;
 }
 
 .post-index-img {
-  max-height: 400px;
-  padding: 5px
-}
-
-.post-index-grid-container-photos {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 30px;
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+    max-height: fit-content;
+    padding: 5px;
 }

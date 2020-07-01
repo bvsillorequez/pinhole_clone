@@ -1,5 +1,6 @@
 import React from 'react'
 import modal from '../modal/modal'
+import { Redirect } from 'react-router-dom'
 
 export default class PostForm extends React.Component{
   constructor(props){
@@ -11,6 +12,7 @@ export default class PostForm extends React.Component{
       user_id: this.props.post.user_id,
       photoFile:  [],
       photoUrl: [],
+      redirect: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFile = this.handleFile.bind(this)
@@ -46,8 +48,11 @@ export default class PostForm extends React.Component{
           body: '',
           photoFile: [],
           photoUrl: [],
+          redirect: true,
         })
       )
+      debugger
+    
   }
 
   handleFile(e){
@@ -81,7 +86,9 @@ export default class PostForm extends React.Component{
     this.setState ({
       photoFile: [],
       photoUrl: [],
+      redirect: true,
     })
+    debugger
   }
 
   deletePost() {
@@ -116,7 +123,7 @@ export default class PostForm extends React.Component{
 
   render() {
     const { formType, errors } = this.props 
-
+    debugger
     if (errors) { 
     const err = errors.map((error, i) => {
       return <li key={i}>{error}</li>
@@ -131,6 +138,10 @@ export default class PostForm extends React.Component{
             src={url} />
         </li>
     })
+
+    if (this.state.redirect) {
+      return <Redirect to='/posts' /> 
+    }
   
     return (
       <div className="post-form-top-container post-form-layout-parent">
