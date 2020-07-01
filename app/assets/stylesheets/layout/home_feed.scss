@@ -20,3 +20,16 @@
   font-weight: bolder;
   font-size: 24px;
 }
+
+.home-page-images {
+  display: flex;
+  flex-flow: row wrap;
+  width: calc(0.90 * 100vw);
+  padding-top: 20px;
+}
+
+.home-grid-container-photos {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
