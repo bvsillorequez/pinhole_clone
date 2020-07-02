@@ -51,7 +51,6 @@ export default class PostForm extends React.Component{
           redirect: true,
         })
       )
-      debugger
     
   }
 
@@ -88,7 +87,7 @@ export default class PostForm extends React.Component{
       photoUrl: [],
       redirect: true,
     })
-    debugger
+    
   }
 
   deletePost() {
@@ -123,7 +122,7 @@ export default class PostForm extends React.Component{
 
   render() {
     const { formType, errors } = this.props 
-    debugger
+    
     if (errors) { 
     const err = errors.map((error, i) => {
       return <li key={i}>{error}</li>
