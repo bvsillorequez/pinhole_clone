@@ -31,7 +31,9 @@ export default class PostForm extends React.Component{
     
     const formData = new FormData()
 
-    formData.append('post[id]', this.state.id)
+    if (this.state.id){
+      formData.append('post[id]', this.state.id)
+    }
     formData.append('post[title]', this.state.title)
     formData.append('post[body]', this.state.body)
     formData.append('post[user_id]', this.state.user_id)
@@ -40,7 +42,7 @@ export default class PostForm extends React.Component{
         formData.append("post[photo][]", this.state.photoFile[i])
       }
     }
-    
+    debugger
     this.props.action(formData)
       .then(
         this.setState({

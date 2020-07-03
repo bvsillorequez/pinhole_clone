@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   validate :ensure_photo
   
   belongs_to :user
-
+  debugger
   has_many_attached :photo
 
   def ensure_photo
