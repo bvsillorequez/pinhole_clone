@@ -2,7 +2,7 @@
 
 # PINHOLE
 
-**Pinhole** is a funtional clone of 500px which showcases a network for 
+**Pinhole** is a functional clone of 500px which showcases a network for 
 photographers to display their portfolio with other like minded people.  
 This single page platform uses React/Redux, Javascript, Ruby on Rails, and 
 PostgreSQL and allows users to sign up and log in to an account, view a gallery
