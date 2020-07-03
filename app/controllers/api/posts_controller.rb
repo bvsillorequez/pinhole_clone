@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    debugger
+
     @post = Post.new(post_params)
     if @post.user_id == current_user.id && @post.save
       render 'api/posts/show'

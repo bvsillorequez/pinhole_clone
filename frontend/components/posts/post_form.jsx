@@ -42,7 +42,7 @@ export default class PostForm extends React.Component{
         formData.append("post[photo][]", this.state.photoFile[i])
       }
     }
-    debugger
+
     this.props.action(formData)
       .then(
         this.setState({
