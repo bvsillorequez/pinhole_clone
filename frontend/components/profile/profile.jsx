@@ -1,4 +1,5 @@
 import React from 'react'
+import PostIndex from '../posts/post_index'
 
 const Profile = () => {
   return (
@@ -8,6 +9,7 @@ const Profile = () => {
       </div>
       <div>
         {/* Index */}
+        <PostIndex />
       </div>
     </div>
   )
