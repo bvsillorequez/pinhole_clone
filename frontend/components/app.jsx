@@ -12,6 +12,7 @@ import PostShowContainer from './posts/post_show_container'
 import EditPostContainer from './posts/edit_post_form_container'
 import UploadForm from './posts/upload_form'
 import Modal from './modal/modal'
+import ProfileHeaderContainer from './profile/profileheader_container'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <ProtectedRoute exact path="/upload" component={UploadForm} />
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
         <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
+        <ProtectedRoute exact path="/profile/:userId" component={ProfileHeaderContainer}/>
         <Route exact path="/posts/:postId" component={PostShowContainer} />
 
         <AuthRoute exact path="/login" component={LoginFormContainer} />
