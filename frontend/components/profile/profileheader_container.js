@@ -2,7 +2,7 @@ import {connect} from 'react-redux'
 import ProfileHeader from './profileheader'
 
 const mSTP = state => ({
-
+  // session: state.username
 })
 
 const mDTP = dispatch => ({
