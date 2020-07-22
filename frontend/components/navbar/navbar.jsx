@@ -9,9 +9,10 @@ export default class Navbar extends React.Component{
           <NavLink to='/'>PINHOLE</NavLink>
         </h1>
         <div className="navbar">
-          <NavLink to='/' >Discover</NavLink>
+          {/* <NavLink to='/' >Discover</NavLink> */}
           <a href="https://github.com/bvsillorequez">GitHub</a>
           <a href="http://www.linkedin.com/in/bsillo">LinkedIn</a>
+          <a href="https://angel.co/u/bryan-sillorequez-1">AngelList</a>
         </div>
       </div>
     )

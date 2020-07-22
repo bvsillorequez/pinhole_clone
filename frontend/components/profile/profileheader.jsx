@@ -1,4 +1,6 @@
 import React from 'react'
+import PostIndex from '../posts/post_index'
+import PostIndexPhotos from '../posts/post_index_photos'
 
 class ProfileHeader extends React.Component {
   constructor(props){
@@ -7,24 +9,55 @@ class ProfileHeader extends React.Component {
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId)
+    this.props.fetchPosts()
   }
 
   render () {
+
+    const photos = this.props.posts.map(post => {
+      if (post.user_id === this.props.session) {
+        return <PostIndexPhotos key={post.id} post={post} />
+      }
+    })
+
+    let count = 0
+    photos.forEach(photo => {
+      if (photo) count++
+    })
+
     debugger
+    for (let i = (photos.length - 1); i > 0; i--) {
+      const j = Math.floor(Math.random() * i)
+      const temp = photos[i]
+      photos[i] = photos[j]
+      photos[j] = temp
+    }
+
     return (
-      <div>
+      <div className="profile-parent-container">
         <div className="profile-header">
-          <div>
             <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?cs=srgb&dl=seaport-during-daytime-132037.jpg&fm=jpg" alt="header-image"/>
-          </div>
+          
         </div>
         <div className="profile-picture">
-          <div>
-            <img src="https://images.squarespace-cdn.com/content/v1/55550428e4b0d770e3f981ab/1540229270362-EIHH84QIIQYMWCEB2QVP/ke17ZwdGBToddI8pDm48kDEDYh4Y0JGhR6hzuwcJ44gUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcz6bs2FkMoqlrQIzq4g5ogDqXr_T7rMikH_TfPkEE4wwzGwe9KEhUq6A0DxOZf-75/cool+corporate+headshot+in+denver?format=500w" alt="profile-image"/>
-          </div>
+          <img src="https://i0.wp.com/www.ishootshows.com/wp-content/uploads/2008/07/todd-owyoung-portrait-145238_COB8628-square-600px.jpg?w=1200&ssl=1" alt="profile-image"/>
+        </div>
+        <div className="profile-user-info">
+          {this.props.user.username}
         </div>
         <div>
-          {this.props.user.username}
+          <div className="post-index-photos-conatiner">
+            <div className="post-index-grid-container">
+              <div className="post-index-grid-inner">
+              <div className="your-uploads">
+                Galleries({count})
+              </div>
+                <ul className="post-index-grid-container-photos" >
+                  {photos}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
