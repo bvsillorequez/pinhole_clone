@@ -5,6 +5,11 @@ class ProfileHeader extends React.Component {
     super(props)
   }
 
+  componentDidMount(){
+    let user = this.props.userId
+    this.props.fetchUser(user)
+  }
+
   render () {
     return (
       <div>

@@ -1,15 +1,16 @@
 import {connect} from 'react-redux'
 import ProfileHeader from './profileheader'
+import { fetchUser } from '../../actions/profile_actions'
 
-const mSTP = state => ({
-  // session: state.username
-})
+const mSTP = state => {
+  return {
+    user: state.entities.user,
+    userId: state.session.id
+  }
+}
 
 const mDTP = dispatch => ({
-  //call current user thorough action.js thunk
-  //api util to fetchUser
-  //reducer 2 cases  1 receive current use or error
-  //state in mSTP
+  fetchUser: user => dispatch(fetchUser(user))
 })
 
 export default connect(mSTP, mDTP)(ProfileHeader)

@@ -5,21 +5,25 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import React from 'react';
 
 const mSTP = state => {
+  debugger
   return {
     errors: Object.values(state.errors.session),
     formType: 'login'
   }
 }
 
-const mDTP = dispatch => ({
-  processForm: user => dispatch(login(user)),
-  clearErrors: () => dispatch(clearErrors()),
-  otherForm: (
-    <button onClick={() => dispatch(openModal('signup'))}>
-      Signup
-    </button>
-  ),
-  closeModal: () => dispatch(closeModal())
-})
+const mDTP = dispatch => {
+  debugger
+  return {
+    processForm: user => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors()),
+    otherForm: (
+      <button onClick={() => dispatch(openModal('signup'))}>
+        Signup
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal())
+  }
+}
 
 export default connect(mSTP, mDTP)(SessionForm);
