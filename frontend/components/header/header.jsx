@@ -6,7 +6,7 @@ class Header extends React.Component {
   isLoggedIn() {
     return (
       <div>
-        <ProfileDropdown logout={this.props.logout}/>
+        <ProfileDropdown logout={this.props.logout} userId={this.props.currentUser}/>
         <i className="far fa-paper-plane fa-lg"></i>
         <i className="far fa-bell fa-lg"></i>
         <Link to='/upload' className='header_comps sign_up'>Upload</Link>

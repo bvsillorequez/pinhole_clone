@@ -5,7 +5,6 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import React from 'react';
 
 const mSTP = state => {
-  debugger
   return {
     errors: Object.values(state.errors.session),
     formType: 'login'
@@ -13,7 +12,6 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => {
-  debugger
   return {
     processForm: user => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),

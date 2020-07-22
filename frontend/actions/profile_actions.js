@@ -7,8 +7,8 @@ export const receiveUser = user => ({
   user
 })
 
-export const fetchUser = (user) => dispatch => {
+export const fetchUser = (userId) => dispatch => {
   return (
-    ProfileApiUtil.fetchUser(user).then(user => dispatch(receiveUser(user)))
+    ProfileApiUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)))
   )
 }

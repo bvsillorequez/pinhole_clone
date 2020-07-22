@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-const ProfileDropdown = ({logout}) => {
+const ProfileDropdown = ({logout, userId}) => {
   const triggerDropdown = () => {
     $('#profiledropdown').toggleClass('trigger')
   }
@@ -13,7 +13,7 @@ const ProfileDropdown = ({logout}) => {
         <i className="fas fa-user-alt fa-lg"></i>
       </div>
       <ul id="profiledropdown">
-        <li><Link to={`/api/users/user.id`} className="profileLink">Profile</Link></li>
+        <li><Link to={`/user/${userId.id}`} className="profileLink">Profile</Link></li>
         <li><Link to={`/posts`} className="profileLink">Galleries</Link></li>
         <li><Link to={`/users/`} className="profileLink">Liked photos</Link></li>
         <br/>

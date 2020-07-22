@@ -7,10 +7,8 @@ const Profile = () => {
     <div>
       <div>
         <ProfileHeader/>
-        {/* Header */}
       </div>
       <div>
-        {/* Index */}
         <PostIndex />
       </div>
     </div>

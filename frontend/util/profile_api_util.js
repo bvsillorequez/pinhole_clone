@@ -1,6 +1,12 @@
-export const currentUser = user => (
+// export const allUsers = () => (
+//   $.ajax({
+//      url: `/api/users`
+//   })
+// )
+
+export const fetchUser = userId => (
   $.ajax({
-     url: `/api/users/${user}`
+     url: `/api/users/${userId}`
   })
 )
 

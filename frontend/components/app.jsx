@@ -27,7 +27,7 @@ const App = () => {
         <ProtectedRoute exact path="/upload" component={UploadForm} />
         <ProtectedRoute exact path="/posts" component={PostIndexContainer} />
         <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
-        <ProtectedRoute exact path="/profile/:userId" component={ProfileHeaderContainer}/>
+        <ProtectedRoute exact path="/user/:userId" component={ProfileHeaderContainer}/>
         <Route exact path="/posts/:postId" component={PostShowContainer} />
 
         <AuthRoute exact path="/login" component={LoginFormContainer} />
