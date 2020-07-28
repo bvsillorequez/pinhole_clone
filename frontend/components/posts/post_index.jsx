@@ -7,6 +7,7 @@ class PostIndex extends React.Component {
   }
 
   render () {
+    debugger
     if (!this.props.posts) return null;
     
     const photos = this.props.posts.map(post => {
@@ -21,7 +22,7 @@ class PostIndex extends React.Component {
       photos[i] = photos[j]
       photos[j] = temp
     }
-
+    
     return (
       <div className="post-index-photos-conatiner">
         <div className="post-index-grid-container">

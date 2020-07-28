@@ -5,6 +5,7 @@ import Like from './like'
 const mSTP = (state, ownProps) => {
   return {
     like: state.entities.like,
+    posts: state.entites.post,
     session: state.session.id
   }
 }
