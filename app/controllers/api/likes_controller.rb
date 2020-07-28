@@ -1,6 +1,7 @@
 class Api::LikesController < ApplicationController
   before_action :require_login, only: [:create, :destroy]
   def create
+    params[:like][:user_id] == current_user.id
     @like = Like.new(like_params)
     if @like.save
       render 'api/likes/show' #this is just a dummie for now
