@@ -12,7 +12,6 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => {
-  debugger
   return {
     fetchPosts: () => dispatch(fetchPosts()),
     createLike: (userId, postId) => dispatch(createLike(userId, postId)),

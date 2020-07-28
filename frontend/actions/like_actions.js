@@ -4,7 +4,6 @@ export const RECEIVE_LIKE = 'RECEIVE_LIKE'
 export const REMOVE_LIKE = 'REMOVE_LIKE'
 
 const receiveLike = likeData => {
-  debugger
   return ({
     type: RECEIVE_LIKE,
     id: likeData.id,

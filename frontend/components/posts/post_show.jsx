@@ -13,6 +13,12 @@ class PostShow extends React.Component {
   }
 
   addRemove() {
+    let liked
+    if (this.props.post.id === this.props.like.id && this.props.like) {
+      liked = true
+    } else {
+      liked = false
+    }
     if (this.props.post.user_id === this.props.session) {
       return (
         <div className="post-show-navbar">
@@ -22,6 +28,20 @@ class PostShow extends React.Component {
           <Link to={`/posts/${this.props.post.id}/edit`}>
             <i className="far fa-edit fa-lg"></i>
           </Link>
+        </div>
+      )
+    } else {
+      return (
+        <div className="post-show-navbar">
+          {
+            liked ?
+              <button onClick={() => this.props.deleteLike(this.props.like.id)}>
+                {<i className="fas fa-heart"></i>}
+              </button> :
+              <button onClick={() => this.props.createLike(this.props.userId, this.props.post.id)}>
+                {<i className="far fa-heart"></i>}
+              </button>
+          }
         </div>
       )
     }
@@ -35,8 +55,6 @@ class PostShow extends React.Component {
     const photo = photoArray.map((url, i) => {
       return <img src={url} key={i} className='post-show-img'/>
     })
-
-    
     
     return (
       <>
