@@ -11,7 +11,7 @@ class PostShow extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    debugger
+    
     if (prevProps.match.params.postId !== this.props.match.params.postId) {
       this.props.fetchPost(this.props.match.params.postId)
     }
@@ -27,7 +27,7 @@ class PostShow extends React.Component {
         liked = true
       }
     }
-    debugger
+
     if (this.props.post.user_id === this.props.session) {
       return (
         <div className="post-show-navbar">
@@ -44,11 +44,13 @@ class PostShow extends React.Component {
         <div className="post-show-navbar">
           {
             liked ?
-              <button onClick={() => this.props.deleteLike(postLikeId[0])}>
-                {<i className="fas fa-heart"></i>}
+              <button className='heart-button' 
+              onClick={() => this.props.deleteLike(postLikeId[0])}>
+                {<i className="fas fa-heart fa-2x"></i>}
               </button> :
-              <button onClick={() => this.props.createLike(this.props.session, this.props.post.id)}>
-                {<i className="far fa-heart"></i>}
+              <button className='heart-button' 
+              onClick={() => this.props.createLike(this.props.session, this.props.post.id)}>
+                {<i className="far fa-heart fa-2x"></i>}
               </button>
           }
         </div>

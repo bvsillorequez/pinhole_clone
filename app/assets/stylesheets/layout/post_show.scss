@@ -2,7 +2,7 @@
   display: block;
   position: relative;
   background-color: aliceblue;
-  height: 100%;
+  height: 100vh;
 }
 
 .post-show-index {
@@ -69,4 +69,17 @@
 .post-show-navbar i{
   margin-right: 12px;
   color: black;
+}
+
+.heart-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  overflow: hidden;
+  outline:none;
+  cursor:pointer;
+}
+
+.heart-button > i {
+  color: darkred;
 }

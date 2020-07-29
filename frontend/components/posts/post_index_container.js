@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import PostIndex from "./post_index"
 import { fetchPosts } from "../../actions/post_actions"
-import { createLike, deleteLike } from '../../actions/like_actions'
+import { fetchLikes, createLike, deleteLike } from '../../actions/like_actions'
 
 const mSTP = state => {
  
@@ -15,8 +15,8 @@ const mSTP = state => {
 const mDTP = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-
-    createLike: like => dispatch(createLike(like)),
+    fetchLikes: () => dispatch(fetchLikes()),
+    createLike: (userId, postId) => dispatch(createLike(userId, postId)),
     deleteLike: likeId => dispatch(deleteLike(likeId))
   }
 }

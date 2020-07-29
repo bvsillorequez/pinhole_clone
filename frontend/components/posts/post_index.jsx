@@ -7,7 +7,7 @@ class PostIndex extends React.Component {
   }
 
   render () {
-    
+
     if (!this.props.posts) return null;
     
     const photos = this.props.posts.map(post => {

@@ -19,16 +19,6 @@
   margin: 50px;
 }
 
-// .post-index-img {
-//   max-height: 400px;
-//   padding: 5px
-// }
-
-// .post-index-grid-container-photos {
-//     display: flex;
-//     flex-flow: row wrap;
-//     padding: 30px;
-// }
 .post-index-grid-container-photos {
     column-count: 3;
     column-gap: 1em;
@@ -40,4 +30,15 @@
     object-fit: contain;
     max-height: fit-content;
     padding: 5px;
+}
+
+.post-index-img-li {
+  display: inline-block;
+}
+
+.heart-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
 }
