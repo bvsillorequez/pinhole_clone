@@ -2,9 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 class PostShow extends React.Component {
-  constructor(props){
-    super(props)
-  }
   componentDidMount(){
     this.props.fetchPost(this.props.match.params.postId)
     this.props.fetchLikes()
@@ -18,23 +15,24 @@ class PostShow extends React.Component {
   }
 
   addRemove() {
+    const {like, post, deleteLike, createLike, session } = this.props
     let liked = false
     let postLikeId = []
     
-    for(let i = 0; i < this.props.like.length; i++) {
-      if (this.props.like && this.props.post.id === this.props.like[i].post_id) {
-        postLikeId.push(this.props.like[i].id)
+    for(let i = 0; i < like.length; i++) {
+      if (like && post.id === like[i].post_id) {
+        postLikeId.push(like[i].id)
         liked = true
       }
     }
 
-    if (this.props.post.user_id === this.props.session) {
+    if (post.user_id === session) {
       return (
         <div className="post-show-navbar">
           <Link to='/upload'>
             <i className="far fa-plus-square fa-lg"></i>
           </Link>
-          <Link to={`/posts/${this.props.post.id}/edit`}>
+          <Link to={`/posts/${post.id}/edit`}>
             <i className="far fa-edit fa-lg"></i>
           </Link>
         </div>
@@ -45,11 +43,11 @@ class PostShow extends React.Component {
           {
             liked ?
               <button className='heart-button' 
-              onClick={() => this.props.deleteLike(postLikeId[0])}>
+              onClick={() => deleteLike(postLikeId[0])}>
                 {<i className="fas fa-heart fa-2x"></i>}
               </button> :
               <button className='heart-button' 
-              onClick={() => this.props.createLike(this.props.session, this.props.post.id)}>
+              onClick={() => createLike(session, post.id)}>
                 {<i className="far fa-heart fa-2x"></i>}
               </button>
           }
@@ -59,9 +57,10 @@ class PostShow extends React.Component {
   }
 
   render () {
-    if (!this.props.post) return null;
+    const { post } = this.props
+    if (!post) return null;
 
-    const photoArray = Array.isArray(this.props.post.photoUrl) ? this.props.post.photoUrl : [this.props.post.photoUrl]
+    const photoArray = Array.isArray(post.photoUrl) ? post.photoUrl : [post.photoUrl]
 
     const photo = photoArray.map((url, i) => {
       return <img src={url} key={i} className='post-show-img'/>
@@ -82,10 +81,10 @@ class PostShow extends React.Component {
                 
                 {this.addRemove()}
 
-                <h5>{this.props.post.title}</h5>
-                <h6>by {this.props.post.user}</h6>
-                <p>Taken: {this.props.post.created_at}</p>
-                <p>{this.props.post.body}</p>
+                <h5>{post.title}</h5>
+                <h6>by {post.user}</h6>
+                <p>Taken: {post.created_at}</p>
+                <p>{post.body}</p>
               </div>
               <div className="post-comments">
                 {/* THIS WILL BE A COMMENT CONTAINER */}

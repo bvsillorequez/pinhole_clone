@@ -93,8 +93,11 @@ export default class PostForm extends React.Component{
   }
 
   deletePost() {
+    const {deletePost, post} = this.props
     return (
-      <button className="deleteButton" onClick={()=> this.props.deletePost(this.props.post.id)}>Delete photo</button>
+      <button className="deleteButton" onClick={()=> deletePost(post.id)}>
+        Delete photo
+      </button>
     )
   }
 
@@ -123,7 +126,7 @@ export default class PostForm extends React.Component{
   }
 
   render() {
-    const { formType, errors } = this.props 
+    const { formType, errors, post, cancelModal } = this.props 
     
     if (errors) { 
     const err = errors.map((error, i) => {
@@ -162,7 +165,7 @@ export default class PostForm extends React.Component{
             <div className="post-form-layout-grid">
               <div className="post-form-layout-grid-container">
                 <ul className="post-form-layout-grid-container-photos" >
-                  {formType === 'Create Post' ? preview : <img className="editImage"src={this.props.post.photoUrl}/>}
+                  {formType === 'Create Post' ? preview : <img className="editImage"src={post.photoUrl}/>}
                 </ul>
               </div>
             </div>
@@ -194,7 +197,7 @@ export default class PostForm extends React.Component{
                 </div>
                 <div className="createButton">
                   <div className="createButton-container">
-                    {this.props.cancelModal}
+                    {cancelModal}
                     <input type="submit" className='upload-button' value={createButton} />
                   </div>
                 </div>

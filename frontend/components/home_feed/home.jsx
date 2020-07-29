@@ -8,10 +8,18 @@ class HomeIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.posts) return null;
+    const {posts, like, createLike, deleteLike, session} = this.props
+    if (!posts) return null;
     
-    const photos = this.props.posts.map(post => {
-      return <PostIndexPhotos key={post.id} post={post} like={this.props.like} createLike={this.props.createLike} deleteLike={this.props.deleteLike} userId={this.props.session}/>
+    const photos = posts.map(post => {
+      return <PostIndexPhotos 
+                key={post.id} 
+                post={post} 
+                like={like} 
+                createLike={createLike} 
+                deleteLike={deleteLike} 
+                userId={session}
+              />
     })
     
     // random feed generator

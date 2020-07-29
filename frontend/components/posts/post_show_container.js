@@ -16,7 +16,6 @@ const mDTP = dispatch => {
   return {
     fetchPost: postId => dispatch(fetchPost(postId)),
     fetchLikes: () => dispatch(fetchLikes()),
-    fetchLike: likeId => dispatch(fetchLike(likeId)),
     createLike: (userId, postId) => dispatch(createLike(userId, postId)),
     deleteLike: likeId => dispatch(deleteLike(likeId))
   }
