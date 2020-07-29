@@ -9,6 +9,7 @@ require 'open-uri'
 
 User.destroy_all
 Post.destroy_all
+Like.destroy_all
 
 user1 = User.create!(username: 'Esmeralda', password: '123456')
 user2 = User.create!(username: 'Antanneke', password: '123456')
@@ -119,10 +120,23 @@ file = open('https://pinhole-seed.s3-us-west-1.amazonaws.com/pinhole_seeds/food2
 post21.photo.attach(io: file, filename: 'food2.jpg')
 post21.save!
 
-like1 = Like.create!(user_id: user4.id, post_id: post13)
-like2 = Like.create!(user_id: user4.id, post_id: post9)
-like3 = Like.create!(user_id: user4.id, post_id: post2)
-like4 = Like.create!(user_id: user4.id, post_id: post8)
-like5 = Like.create!(user_id: user4.id, post_id: post21)
-like6 = Like.create!(user_id: user4.id, post_id: post12)
-like7 = Like.create!(user_id: user4.id, post_id: post10)
+like1 = Like.new(user_id: user4.id, post_id: post13)
+like1.save!
+
+like2 = Like.new(user_id: user4.id, post_id: post9)
+like2.save!
+
+like3 = Like.new(user_id: user4.id, post_id: post2)
+like3.save!
+
+like4 = Like.new(user_id: user4.id, post_id: post8)
+like4.save!
+
+like5 = Like.new(user_id: user4.id, post_id: post21)
+like5.save!
+
+like6 = Like.new(user_id: user4.id, post_id: post12)
+like6.save!
+
+like7 = Like.new(user_id: user4.id, post_id: post10)
+like7.save!
