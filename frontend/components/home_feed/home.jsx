@@ -10,7 +10,8 @@ class HomeIndex extends React.Component {
     if (!this.props.posts) return null;
 
     const photos = this.props.posts.map(post => {
-      return <PostIndexPhotos key={post.id} post={post} likes={this.props.likes} createLike={this.props.createLike} deleteLike={this.props.deleteLike} userId={this.props.session}/>
+      return <PostIndexPhotos key={post.id} post={post}/>
+      // likes = { this.props.likes } createLike = { this.props.createLike } deleteLike = { this.props.deleteLike } userId = { this.props.session }
     })
 
     for (let i = (photos.length - 1); i > 0; i--) {

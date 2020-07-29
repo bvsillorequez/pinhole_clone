@@ -1,5 +1,14 @@
 class Api::LikesController < ApplicationController
   before_action :require_login, only: [:create, :destroy]
+
+  def index
+    @likes = Like.all
+  end
+
+  def show
+    @like = Like.find_by(id: params[:id])
+  end
+  
   def create
     if params[:user_id].to_i == current_user.id
       @like = Like.new
@@ -8,7 +17,7 @@ class Api::LikesController < ApplicationController
       if @like.save
         render 'api/likes/show' #this is just a dummie for now
       else
-        render json: @like.errors.full_message, status: 422
+        render json: @like.errors.full_messages, status: 422
       end
     end
   end

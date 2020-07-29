@@ -25,7 +25,7 @@ class ProfileHeader extends React.Component {
       if (photo) count++
     })
 
-    debugger
+    
     for (let i = (photos.length - 1); i > 0; i--) {
       const j = Math.floor(Math.random() * i)
       const temp = photos[i]

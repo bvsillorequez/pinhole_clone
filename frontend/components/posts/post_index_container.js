@@ -4,7 +4,7 @@ import { fetchPosts } from "../../actions/post_actions"
 import { createLike, deleteLike } from '../../actions/like_actions'
 
 const mSTP = state => {
-  debugger
+ 
   return {
     posts: Object.values(state.entities.posts),
     like: state.entities.like,

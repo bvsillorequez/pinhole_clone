@@ -1,4 +1,17 @@
+export const fetchLikes = () => (
+  $.ajax({
+    url: `/api/likes` 
+  })
+)
+
+export const fetchLike = likeId => (
+  $.ajax({
+    url: `/api/posts/${likeId}`
+  })
+)
+
 export const createLike = (userId, postId) => {
+  
   return (
     $.ajax({
       url: `/api/likes`,

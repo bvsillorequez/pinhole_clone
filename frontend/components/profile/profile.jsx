@@ -3,7 +3,7 @@ import PostIndex from '../posts/post_index'
 import ProfileHeader from './profileheader'
 
 const Profile = ({user, userId}) => {
-  debugger
+ 
   return (
     <div>
       <div>
