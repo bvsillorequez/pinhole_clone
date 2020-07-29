@@ -92,7 +92,7 @@ export default class PostForm extends React.Component{
     
   }
 
-  deletePost() {
+  deletePostButton() {
     const {post} = this.props
     return (
       <button className="deleteButton" onClick={()=> this.props.deletePost(post.id)}>
@@ -192,7 +192,7 @@ export default class PostForm extends React.Component{
                           value={this.state.body} />
                     </label>
                     {formType === 'Create Post' ? '' :
-                      this.deletePost()}
+                      this.deletePostButton()}
                   </div>
                 </div>
                 <div className="createButton">
