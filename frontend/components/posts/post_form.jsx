@@ -198,7 +198,11 @@ export default class PostForm extends React.Component{
                 <div className="createButton">
                   <div className="createButton-container">
                     {cancelModal}
-                    <input type="submit" className='upload-button' value={createButton} />
+                    <input type="submit" 
+                          className='upload-button' 
+                          value={createButton} 
+                          disabled={this.state.title.length < 1}
+                          />
                   </div>
                 </div>
               
