@@ -93,9 +93,9 @@ export default class PostForm extends React.Component{
   }
 
   deletePost() {
-    const {deletePost, post} = this.props
+    const {post} = this.props
     return (
-      <button className="deleteButton" onClick={()=> deletePost(post.id)}>
+      <button className="deleteButton" onClick={()=> this.props.deletePost(post.id)}>
         Delete photo
       </button>
     )
