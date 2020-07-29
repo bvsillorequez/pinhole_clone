@@ -118,3 +118,11 @@ post21 = Post.new(title:'Tropical Mornings' , body:'Looking for another pineappl
 file = open('https://pinhole-seed.s3-us-west-1.amazonaws.com/pinhole_seeds/food2.jpg')
 post21.photo.attach(io: file, filename: 'food2.jpg')
 post21.save!
+
+like1 = Like.create!(user_id: user4.id, post_id: post13)
+like2 = Like.create!(user_id: user4.id, post_id: post9)
+like3 = Like.create!(user_id: user4.id, post_id: post2)
+like4 = Like.create!(user_id: user4.id, post_id: post8)
+like5 = Like.create!(user_id: user4.id, post_id: post21)
+like6 = Like.create!(user_id: user4.id, post_id: post12)
+like7 = Like.create!(user_id: user4.id, post_id: post10)

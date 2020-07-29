@@ -9,6 +9,7 @@ const PostIndexPhotos = props => {
   let postLikeId = []
   
   for (let i = 0; i < props.like.length; i++) {
+    
     if (props.like && props.post.id === props.like[i].post_id) {
       postLikeId.push(props.like[i].id)
       count++
